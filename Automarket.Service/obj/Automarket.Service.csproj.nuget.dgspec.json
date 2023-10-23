@@ -1,0 +1,208 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\Visual Studio\\ASP.Net\\Automarket\\Automarket.Service\\Automarket.Service.csproj": {}
+  },
+  "projects": {
+    "D:\\Visual Studio\\ASP.Net\\Automarket\\Automarket.DAL\\Automarket.DAL.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Visual Studio\\ASP.Net\\Automarket\\Automarket.DAL\\Automarket.DAL.csproj",
+        "projectName": "Automarket.DAL",
+        "projectPath": "D:\\Visual Studio\\ASP.Net\\Automarket\\Automarket.DAL\\Automarket.DAL.csproj",
+        "packagesPath": "C:\\Users\\vladl\\.nuget\\packages\\",
+        "outputPath": "D:\\Visual Studio\\ASP.Net\\Automarket\\Automarket.DAL\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\vladl\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "D:\\Visual Studio\\ASP.Net\\Automarket\\Automarket.Domain\\Automarket.Domain.csproj": {
+                "projectPath": "D:\\Visual Studio\\ASP.Net\\Automarket\\Automarket.Domain\\Automarket.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.21, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[6.0.21, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\Visual Studio\\ASP.Net\\Automarket\\Automarket.Domain\\Automarket.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Visual Studio\\ASP.Net\\Automarket\\Automarket.Domain\\Automarket.Domain.csproj",
+        "projectName": "Automarket.Domain",
+        "projectPath": "D:\\Visual Studio\\ASP.Net\\Automarket\\Automarket.Domain\\Automarket.Domain.csproj",
+        "packagesPath": "C:\\Users\\vladl\\.nuget\\packages\\",
+        "outputPath": "D:\\Visual Studio\\ASP.Net\\Automarket\\Automarket.Domain\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\vladl\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Http.Features": {
+              "target": "Package",
+              "version": "[5.0.17, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.21, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[6.0.21, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\Visual Studio\\ASP.Net\\Automarket\\Automarket.Service\\Automarket.Service.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Visual Studio\\ASP.Net\\Automarket\\Automarket.Service\\Automarket.Service.csproj",
+        "projectName": "Automarket.Service",
+        "projectPath": "D:\\Visual Studio\\ASP.Net\\Automarket\\Automarket.Service\\Automarket.Service.csproj",
+        "packagesPath": "C:\\Users\\vladl\\.nuget\\packages\\",
+        "outputPath": "D:\\Visual Studio\\ASP.Net\\Automarket\\Automarket.Service\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\vladl\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "D:\\Visual Studio\\ASP.Net\\Automarket\\Automarket.DAL\\Automarket.DAL.csproj": {
+                "projectPath": "D:\\Visual Studio\\ASP.Net\\Automarket\\Automarket.DAL\\Automarket.DAL.csproj"
+              },
+              "D:\\Visual Studio\\ASP.Net\\Automarket\\Automarket.Domain\\Automarket.Domain.csproj": {
+                "projectPath": "D:\\Visual Studio\\ASP.Net\\Automarket\\Automarket.Domain\\Automarket.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

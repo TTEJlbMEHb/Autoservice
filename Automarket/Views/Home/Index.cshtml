@@ -1,0 +1,146 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<body>
+    <main>
+        <div class="mainpage">
+            <div class="mainpage_items">
+                <div class="maipage_text">
+                    <span class="upper_mainpage_text">AutoService</span><br />
+                    <span class="middle_mainpage_text yellow_text">DREAM CARS</span><br />
+                </div>
+                <button class="readmore_button" onclick="window.location.href='https://localhost:7085/'">
+                    <span class="readmore_text">Read More</span>
+                </button>
+            </div>
+            <div class="main_layout"></div>
+            <div class="body_color"></div>
+        </div>
+    </main>
+
+    <section>
+        <div class="mainpage_selector">
+            <a class="selector_link" asp-controller="Car" asp-action="GetCars">
+                <div class="selector_option">
+                    <div class="image-container">
+                        <img class="selector_img" src="~/img/car_details1.jpg" alt="Cars" />
+                    </div>
+                    <span class="selector_text">Consumables</span>
+                </div>
+            </a>
+            <a class="selector_link" href="">
+                <div class="selector_option">
+                    <div class="image-container">
+                        <img class="selector_img" src="~/img/autoservices.jpg" alt="Services" />
+                    </div>
+                    <span class="selector_text">Services</span>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <section>
+        <div class="work_conditions">
+            <div class="first_column_conditions">
+                <span class="upper_conditions_text">How does we work?</span>
+                <span class="middle_conditions_text">Just a few easy steps to get a result</span>
+                <img class="conditions_img" src="~/img/autoservices2.jpg" alt="Conditions" />
+                <span class="lower_conditions_text">Make an appointment, don't waste your time</span>
+                <button id="showModalButton" class="activate_button">Apply for</button>
+
+                <div class="modal" id="modal">
+                    <div class="modal_form">
+                        <button class="close_button" id="closeButton">&times;</button>
+                        <h2 class="form_title">Fill out the form for services</h2>
+                        <form id="modal_form" method="post" action="YourAspNetPage.aspx">
+                            <div class="input_container">
+                                <label for="name">Input your name:</label>
+                                <input type="text" id="name" name="name" runat="server" placeholder="Name" />
+                            </div>
+                            <div class="input_container">
+                                <label for="phone_number">Input your phone number:</label>
+                                <input type="tel" id="inputPhone" name="phone_number" runat="server" value="+38(___)___-__-__" />
+                            </div>
+                            <div class="input_container">
+                                <label for="date">Input your date:</label>
+                                <input type="date" id="date" name="date" runat="server" />
+                            </div>
+                            <button class="submit_form" type="submit" runat="server" Text="Submit">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="second_column_conditions">
+                <div class="conditions_bg">
+                    <ul class="conditions_ul">
+                        <li>
+                            <h3 class="condition_title">1. Request</h3>
+                            <p class="condition_description">Leave us a request by phone or on the website</p>
+                        </li>
+                        <li>
+                            <h3 class="condition_title">2. Entry</h3>
+                            <p class="condition_description">The manager will contact you, provide advice and decide on the date and time</p>
+                        </li>
+                        <li>
+                            <h3 class="condition_title">3. Services</h3>
+                            <p class="condition_description">Carrying out diagnostics</p>
+                        </li>
+                        <li>
+                            <h3 class="condition_title">4. Verification and payment</h3>
+                            <p class="condition_description">The master notifies about the completed work, you check and pay for the services</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="services_section">
+        <h2 class="services_list_title">Complex Car Diagnostics</h2>
+        <h4 class="services_list_decription">Expert diagnosis can prevent breakdowns</h4>
+        <div class="services_content">
+            <ul class="left_services_ul">
+                <img class="circle_icon_first" src="~/img/circle_icon.png" alt="Circle icon" />
+                <li>Body Inspection</li>
+                <img class="circle_icon_first" src="~/img/circle_icon.png" alt="Circle icon" />
+                <li>Engine Diagnostics</li>
+                <img class="circle_icon_first" src="~/img/circle_icon.png" alt="Circle icon" />
+                <li>Turbocharger Diagnostics</li>
+                <img class="circle_icon_first" src="~/img/circle_icon.png" alt="Circle icon" />
+                <li>Transmission Check</li>
+                <img class="circle_icon_first" src="~/img/circle_icon.png" alt="Circle icon" />
+                <li>Suspension Diagnosis</li>
+            </ul>
+            <div class="services_list_img">
+                <img class="services_list_img" src="~/img/backside_car.jpg" alt="Services list" />
+            </div>
+            <ul class="right_services_ul">
+                <img class="circle_icon_second" src="~/img/circle_icon.png" alt="Circle icon" />
+                <li>Wheel Alignment</li>
+                <img class="circle_icon_second" src="~/img/circle_icon.png" alt="Circle icon" />
+                <li>Brake System Inspection</li>
+                <img class="circle_icon_second" src="~/img/circle_icon.png" alt="Circle icon" />
+                <li>Steering System Inspection</li>
+                <img class="circle_icon_second" src="~/img/circle_icon.png" alt="Circle icon" />
+                <li>Security System Assessment</li>
+                <img class="circle_icon_second" src="~/img/circle_icon.png" alt="Circle icon" />
+                <li>Computerized Diagnostics</li>
+            </ul>
+        </div>
+    </section>
+
+    <section>
+        <div class="partner_container">
+            <div class="partner_items">
+                <img class="secular_oil" src="~/img/secular_oil.png" alt="Motor oil" />
+                <img class="secular_oil_scaled" src="~/img/secular_oil.png" alt="Motor oil" />
+                <div class="partner_text">
+                    <h3 class="partner_title">High-quality motor oil <p>From our partners</p></h3>
+                    <button class="partner_button">SecAuto</button>
+                </div>
+                <img class="motor_icon" src="~/img/engine_icon1.png" alt="Engine icon" />
+            </div>
+        </div>
+    </section>
+</body>

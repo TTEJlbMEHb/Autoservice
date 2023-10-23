@@ -1,0 +1,30 @@
+D:\VisualStudio\ASP.Net\Automarket\Automarket.DAL\bin\Debug\net6.0\Automarket.DAL.deps.json
+D:\VisualStudio\ASP.Net\Automarket\Automarket.DAL\bin\Debug\net6.0\Automarket.DAL.dll
+D:\VisualStudio\ASP.Net\Automarket\Automarket.DAL\bin\Debug\net6.0\Automarket.DAL.pdb
+D:\VisualStudio\ASP.Net\Automarket\Automarket.DAL\bin\Debug\net6.0\Automarket.Domain.dll
+D:\VisualStudio\ASP.Net\Automarket\Automarket.DAL\bin\Debug\net6.0\Automarket.Domain.pdb
+D:\VisualStudio\ASP.Net\Automarket\Automarket.DAL\obj\Debug\net6.0\Automarket.DAL.csproj.AssemblyReference.cache
+D:\VisualStudio\ASP.Net\Automarket\Automarket.DAL\obj\Debug\net6.0\Automarket.DAL.GeneratedMSBuildEditorConfig.editorconfig
+D:\VisualStudio\ASP.Net\Automarket\Automarket.DAL\obj\Debug\net6.0\Automarket.DAL.AssemblyInfoInputs.cache
+D:\VisualStudio\ASP.Net\Automarket\Automarket.DAL\obj\Debug\net6.0\Automarket.DAL.AssemblyInfo.cs
+D:\VisualStudio\ASP.Net\Automarket\Automarket.DAL\obj\Debug\net6.0\Automarket.DAL.csproj.CoreCompileInputs.cache
+D:\VisualStudio\ASP.Net\Automarket\Automarket.DAL\obj\Debug\net6.0\Automarket.DAL.csproj.CopyComplete
+D:\VisualStudio\ASP.Net\Automarket\Automarket.DAL\obj\Debug\net6.0\Automarket.DAL.dll
+D:\VisualStudio\ASP.Net\Automarket\Automarket.DAL\obj\Debug\net6.0\refint\Automarket.DAL.dll
+D:\VisualStudio\ASP.Net\Automarket\Automarket.DAL\obj\Debug\net6.0\Automarket.DAL.pdb
+D:\VisualStudio\ASP.Net\Automarket\Automarket.DAL\obj\Debug\net6.0\ref\Automarket.DAL.dll
+D:\Visual Studio\ASP.Net\Automarket\Automarket.DAL\bin\Debug\net6.0\Automarket.DAL.deps.json
+D:\Visual Studio\ASP.Net\Automarket\Automarket.DAL\bin\Debug\net6.0\Automarket.DAL.dll
+D:\Visual Studio\ASP.Net\Automarket\Automarket.DAL\bin\Debug\net6.0\Automarket.DAL.pdb
+D:\Visual Studio\ASP.Net\Automarket\Automarket.DAL\bin\Debug\net6.0\Automarket.Domain.dll
+D:\Visual Studio\ASP.Net\Automarket\Automarket.DAL\bin\Debug\net6.0\Automarket.Domain.pdb
+D:\Visual Studio\ASP.Net\Automarket\Automarket.DAL\obj\Debug\net6.0\Automarket.DAL.csproj.AssemblyReference.cache
+D:\Visual Studio\ASP.Net\Automarket\Automarket.DAL\obj\Debug\net6.0\Automarket.DAL.GeneratedMSBuildEditorConfig.editorconfig
+D:\Visual Studio\ASP.Net\Automarket\Automarket.DAL\obj\Debug\net6.0\Automarket.DAL.AssemblyInfoInputs.cache
+D:\Visual Studio\ASP.Net\Automarket\Automarket.DAL\obj\Debug\net6.0\Automarket.DAL.AssemblyInfo.cs
+D:\Visual Studio\ASP.Net\Automarket\Automarket.DAL\obj\Debug\net6.0\Automarket.DAL.csproj.CoreCompileInputs.cache
+D:\Visual Studio\ASP.Net\Automarket\Automarket.DAL\obj\Debug\net6.0\Automarket.DAL.csproj.CopyComplete
+D:\Visual Studio\ASP.Net\Automarket\Automarket.DAL\obj\Debug\net6.0\Automarket.DAL.dll
+D:\Visual Studio\ASP.Net\Automarket\Automarket.DAL\obj\Debug\net6.0\refint\Automarket.DAL.dll
+D:\Visual Studio\ASP.Net\Automarket\Automarket.DAL\obj\Debug\net6.0\Automarket.DAL.pdb
+D:\Visual Studio\ASP.Net\Automarket\Automarket.DAL\obj\Debug\net6.0\ref\Automarket.DAL.dll
