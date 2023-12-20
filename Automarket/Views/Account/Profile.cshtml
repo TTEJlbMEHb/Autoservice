@@ -40,6 +40,9 @@
         <div class="user_information_container">
             <div class="user_information1">
                 <div class="settings_upper">
+                    <a class="back_change_link" asp-controller="Home" asp-action="Index">
+                        <img class="back_change_button" src="~/img/back_black.png" alt="Back button" />
+                    </a>
                     <h2 class="profile_title">My Account</h2>
                     <a class="settings_button" asp-controller="Account"
                        asp-action="ChangeProfile" asp-route-id="@Model.Id">

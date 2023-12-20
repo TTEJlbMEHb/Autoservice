@@ -64,14 +64,14 @@
                         </div>
                     </a>
 
-                    <a class="header_link" asp-controller="Account" asp-action="Profile">
+                    <a class="header_link" asp-controller="Account" asp-action="Profile" asp-route-id="@ViewBag.UserId.Data">
                         <div class="text_icon_container">
                             <img src="~/img/profile_icon.png" alt="profile icon" class="header_icon" />
                             <span class="icon_text">Account</span>
                         </div>
                     </a>
                 }
-                @if (!authenticated)
+                else
                 {
                     <a class="header_link" asp-controller="Account" asp-action="Login">
                         <div class="text_icon_container">

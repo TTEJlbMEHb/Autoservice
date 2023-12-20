@@ -71,11 +71,11 @@ html {
     position: absolute;
     z-index: 1;
     margin-top: 300px;
-    width: 150px;
-    height: 60px;
+    padding: 15px 20px;
     background: transparent;
     border: 3px solid #f7ce50;
     overflow: hidden;
+    text-decoration: none;
 }
 
 .readmore_text {
@@ -83,6 +83,9 @@ html {
     font-size: 22px;
     z-index: 1;
     color: white;
+    text-align: center;
+    margin: 0 auto;
+    align-items: center;
 }
 
 .readmore_button::before {
@@ -591,10 +594,6 @@ label {
     color: white;
 }
 
-.partner_button {
-    margin-bottom: 500px;
-}
-
 .partner_title {
     font-size: 30px;
     font-family: "Poppins";
@@ -626,8 +625,9 @@ label {
 
 .partner_button {
     background: none;
+    text-decoration: none;
     color: white;
-    font-family: "Poppins";
+    font-family: "Montserrat";
     font-weight: 900;
     font-size: 25px;
     padding: 15px 25px;
@@ -767,10 +767,10 @@ label {
     background-position: 17% 50%;
 }
 
-.validatit_container {
+.validating_container {
     position: absolute;
     top: 50px;
-    right: 500px;
+    right: 530px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     padding-right: 20px;
@@ -778,4 +778,106 @@ label {
     font-weight: 700;
     font-size: 18px;
     color: red;
+}
+
+.error_page {
+    margin: 0;
+}
+
+.error_bg {
+    background-color: #222;
+    width: 100%;
+    height: 100%;
+}
+
+.error_container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-top: 13%;
+}
+
+.first_error_column {
+    border: 1px solid gray;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    left: 17%;
+    padding: 25px;
+}
+
+.second_error_column {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    left: 36%;
+}
+
+.error_text {
+    font-size: 30px;
+    font-family: "Montserrat";
+    color: #111;
+    margin-bottom: 40px;
+    background-color: #f7ce50;
+    padding: 5px;
+    text-align: center;
+}
+
+.error_code {
+    font-size: 100px;
+    font-family: "Montserrat";
+    color: white;
+}
+
+.error_title {
+    font-size: 50px;
+    font-family: "Montserrat";
+    color: white;
+}
+
+.error_description {
+    font-size: 25px;
+    font-family: "Poppins";
+    color: white;
+}
+
+.error_back_button {
+    position: absolute;
+    z-index: 1;
+    margin-top: 195px;
+    padding: 15px 20px;
+    background: transparent;
+    border: 3px solid #f7ce50;
+    overflow: hidden;
+    text-decoration: none;
+}
+
+.readmore_text {
+    font-family: "Montserrat";
+    font-size: 22px;
+    z-index: 1;
+    color: white;
+    text-align: center;
+    margin: 0 auto;
+    align-items: center;
+}
+
+.error_back_button::before {
+    z-index: -1;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: #f7ce50;
+    transition: left 0.3s ease-in-out;
+}
+
+.error_back_button:hover::before {
+    left: 0;
+}
+
+.error_back_button:hover .readmore_text {
+    color: black;
 }

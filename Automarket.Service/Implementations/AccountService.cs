@@ -183,6 +183,38 @@ namespace Automarket.Service.Implementations
             }
         }
 
+        public async Task<BaseResponse<long>> GetIdByEmail(string email)
+        {
+            try
+            {
+                var user = await _userRepository.GetAll().FirstOrDefaultAsync(x => x.Email == email);
+
+                if (user == null)
+                {
+                    return new BaseResponse<long>()
+                    {
+                        Description = "Not found",
+                        StatusCode = StatusCode.ObjectNotFound
+                    };
+                }
+
+                long userId = user.Id;
+                return new BaseResponse<long>()
+                {
+                    Data = userId,
+                    StatusCode = StatusCode.OK
+                };
+            }
+            catch (Exception ex)
+            {
+                return new BaseResponse<long>()
+                {
+                    Description = $"[GetIdByEmail] : {ex.Message}",
+                    StatusCode = StatusCode.InternalServerError
+                };
+            }
+        }
+
         public async Task<BaseResponse<User>> Save(User model)
         {
             try

@@ -5,7 +5,7 @@
     ViewData["Title"] = "Consumables";
     bool admin = User.IsInRole("Administrator") || User.IsInRole("Admin");
 
-    bool availible = true;
+    bool available = true;
 
     var itemCount = 0;
 }
@@ -32,65 +32,75 @@
 
             <section>
                 <div class="car_consumables">
-                    @foreach (var car in Model)
+                    @if (Model != null && Model.Any())
                     {
-                        <section>
-                            <div id="modal_delete_@car.Id" class="modal">
-                                <div class="modal-content">
-                                    <button class="close" data-car-id="@car.Id">&times;</button>
-                                    <span class="confirmation_title">Are you sure?</span>
-                                    <div class="confirmation_buttons">
-                                        <a class="confirmSave" id="confirmSave_@car.Id" asp-controller="Car" 
-                                        asp-action="Delete" asp-route-id="@car.Id">Confirm</a>
-                                        <button class="confirmCancel" data-car-id="@car.Id">Cancel</button>
+                        @foreach (var car in Model)
+                        {
+                            <section>
+                                <div id="modal_delete_@car.Id" class="modal">
+                                    <div class="modal-content">
+                                        <button class="close" data-car-id="@car.Id">&times;</button>
+                                        <span class="confirmation_title">Are you sure?</span>
+                                        <div class="confirmation_buttons">
+                                            <a class="confirmSave" id="confirmSave_@car.Id" asp-controller="Car"
+                                               asp-action="Delete" asp-route-id="@car.Id">Confirm</a>
+                                            <button class="confirmCancel" data-car-id="@car.Id">Cancel</button>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </section>
-
-                        <div class="card_item">
-                            <a class="card_link" @* asp-controller="Car" asp-action="GetCar" *@>
-                                <img class="card_img" src="~/img/new_car.png">
-                                <a class="item_name" asp-controller="Car" asp-action="GetCar" asp-route-id="@car.Id">@car.Name @car.Model</a>
-                            </a>
-                            <a class="add_to_basket" asp-controller="Basket" asp-action="Basket"></a>
-                            <a href="" class="favorite_icon"></a>
-                            <span class="item_card_price">$@car.Price<br /></span>
-                            <section>
-                                @if (!availible)
-                                {
-                                    @if (admin)
-                                    {
-                                        <div class="available_item">Available - @itemCount</div>
-                                    }
-                                    else
-                                    {
-                                        <div class="available_item">Available</div>
-                                    }
-                                }
-                                else
-                                {
-                                    @if (admin)
-                                    {
-                                        <div class="unavailable_item">Unavailable - @itemCount</div>
-                                    }
-                                    else
-                                    {
-                                        <div class="unavailable_item">Unavailable</div>
-                                    }
-                                }
                             </section>
-                            <section>
-                                @if (admin)
-                                {
-                                    <div class="admin_items_buttons">
-                                        <a class="edit_items" asp-controller="Car" asp-action="Save" asp-route-id="@car.Id">Edit</a>
-                                        <a class="delete_items" data-car-id="@car.Id">Delete</a>
-                                    </div>
-                                }
-                            </section>                           
-                        </div>
+
+                            <div class="card_item">
+                                <a class="card_link" asp-controller="Car" asp-action="GetCar" asp-route-id="@car.Id">
+                                    <img class="card_img" src="~/img/new_car.png">
+                                    <span class="item_name">@car.Name @car.Model</span>
+                                </a>
+                                <a class="add_to_basket" asp-controller="Basket" asp-action="Basket"></a>
+                                <a href="" class="favorite_icon"></a>
+                                <span class="item_card_price">$@car.Price<br /></span>
+                                <section>
+                                    @if (!available)
+                                    {
+                                        @if (admin)
+                                        {
+                                            <div class="available_item">Available - @itemCount</div>
+                                        }
+                                        else
+                                        {
+                                            <div class="available_item">Available</div>
+                                        }
+                                    }
+                                    else
+                                    {
+                                        @if (admin)
+                                        {
+                                            <div class="unavailable_item">Unavailable - @itemCount</div>
+                                        }
+                                        else
+                                        {
+                                            <div class="unavailable_item">Unavailable</div>
+                                        }
+                                    }
+                                </section>
+                                <section>
+                                    @if (admin)
+                                    {
+                                        <div class="admin_items_buttons">
+                                            <a class="edit_items" asp-controller="Car" asp-action="Save" asp-route-id="@car.Id">Edit</a>
+                                            <a class="delete_items" data-car-id="@car.Id">Delete</a>
+                                        </div>
+                                    }
+                                </section>
+                            </div>
+                        }
                     }
+                    else
+                    {
+                        <div class="no_items">
+                            <span class="no_items_text">No items found!</span>
+                            <span class="no_items_description">The items are coming soon</span>
+                        </div>
+                    }                
                 </div>
             </section>
         </div>

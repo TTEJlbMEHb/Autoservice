@@ -15,11 +15,11 @@ using System.Xml.Linq;
 
 namespace Automarket.Service.Implementations
 {
-    public class CarServise : ICarServise
+    public class CarService : ICarService
     {
         private readonly IBaseRepository<Car> _carRepository;
 
-        public CarServise (IBaseRepository<Car> carRepository)
+        public CarService(IBaseRepository<Car> carRepository)
         {
             _carRepository = carRepository;
         }
@@ -47,7 +47,7 @@ namespace Automarket.Service.Implementations
             }
         }
 
-        public async Task<IBaseResponce<CarViewModel>> GetCar(long id)
+        public async Task<IBaseResponse<CarViewModel>> GetCar(long id)
         {
             try
             {
@@ -91,7 +91,7 @@ namespace Automarket.Service.Implementations
             }
         }
 
-        public async Task<IBaseResponce<List<Car>>> GetCars()
+        public async Task<IBaseResponse<List<Car>>> GetCars()
         {            
             try
             {
@@ -102,7 +102,7 @@ namespace Automarket.Service.Implementations
                     return new BaseResponse<List<Car>>()
                     {
                         Description = "0 elements found",
-                        StatusCode = StatusCode.OK
+                        StatusCode = StatusCode.ObjectNotFound
                     };
                 }
 
@@ -122,7 +122,7 @@ namespace Automarket.Service.Implementations
             }
         }
 
-        //public async Task<IBaseResponce<List<Car>>> GetCars(string request)
+        //public async Task<IBaseResponse<List<Car>>> GetCars(string request)
         //{
         //    try
         //    {   
@@ -158,7 +158,7 @@ namespace Automarket.Service.Implementations
         //    }
         //}
 
-        public async Task<IBaseResponce<Car>> CreateCar(CarViewModel model)
+        public async Task<IBaseResponse<Car>> CreateCar(CarViewModel model)
         {          
             try
             {
@@ -191,7 +191,7 @@ namespace Automarket.Service.Implementations
             }
         }
 
-        public async Task<IBaseResponce<bool>> DeleteCar(long id)
+        public async Task<IBaseResponse<bool>> DeleteCar(long id)
         {
             try
             {
@@ -226,7 +226,7 @@ namespace Automarket.Service.Implementations
             }
         }
 
-        public async Task<IBaseResponce<Car>> Edit(long id, CarViewModel model)
+        public async Task<IBaseResponse<Car>> Edit(long id, CarViewModel model)
         {
             try
             {

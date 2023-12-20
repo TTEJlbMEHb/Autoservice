@@ -20,6 +20,8 @@ namespace Automarket.Service.Interfaces
 
         Task<BaseResponse<User>> GetProfile(long id);
 
+        Task<BaseResponse<long>> GetIdByEmail(string email);
+
         Task<BaseResponse<User>> Save(User model);
     }
 }

@@ -16,7 +16,7 @@ namespace Automarket
 
         public static void InitializeServices(this IServiceCollection services)
         {
-            services.AddScoped<ICarServise, CarServise>();
+            services.AddScoped<ICarService, CarService>();
             services.AddScoped<IAccountService, AccountService>();
         }
     }

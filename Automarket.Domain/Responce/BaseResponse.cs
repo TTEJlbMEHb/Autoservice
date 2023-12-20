@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Automarket.Domain.Responce
 {
-    public class BaseResponse<T> : IBaseResponce<T>
+    public class BaseResponse<T> : IBaseResponse<T>
     {
         public string Description { get; set; }
 
@@ -16,7 +16,7 @@ namespace Automarket.Domain.Responce
         public T Data { get; set; }
     }
 
-    public interface IBaseResponce<T>
+    public interface IBaseResponse<T>
     {
         T Data { get; set; }
         StatusCode StatusCode { get; set; }

@@ -33,6 +33,14 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "D:\\Visual Studio\\ASP.Net\\Automarket\\Automarket\\wwwroot\\img\\404_bg.jpg",
+      "PackagePath": "staticwebassets\\img\\404_bg.jpg"
+    },
+    {
+      "Id": "D:\\Visual Studio\\ASP.Net\\Automarket\\Automarket\\wwwroot\\img\\404_bg1.jpg",
+      "PackagePath": "staticwebassets\\img\\404_bg1.jpg"
+    },
+    {
       "Id": "D:\\Visual Studio\\ASP.Net\\Automarket\\Automarket\\wwwroot\\img\\add_to_busket.png",
       "PackagePath": "staticwebassets\\img\\add_to_busket.png"
     },
@@ -179,6 +187,10 @@
     {
       "Id": "D:\\Visual Studio\\ASP.Net\\Automarket\\Automarket\\wwwroot\\img\\new_car.png",
       "PackagePath": "staticwebassets\\img\\new_car.png"
+    },
+    {
+      "Id": "D:\\Visual Studio\\ASP.Net\\Automarket\\Automarket\\wwwroot\\img\\no_items.png",
+      "PackagePath": "staticwebassets\\img\\no_items.png"
     },
     {
       "Id": "D:\\Visual Studio\\ASP.Net\\Automarket\\Automarket\\wwwroot\\img\\online_automarket.png",

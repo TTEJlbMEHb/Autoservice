@@ -2,11 +2,6 @@
 using Automarket.Domain.Enum;
 using Automarket.Domain.Helpers;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Automarket.DAL
 {
@@ -26,16 +21,30 @@ namespace Automarket.DAL
             {
                 builder.ToTable("User").HasKey(x => x.Id);
 
-                builder.HasData(new User
+                builder.HasData(new User[]
                 {
-                    Id = 2,
-                    Username = "administrator",                    
-                    Email = "secauto.administrator@gmail.com",
-                    Name = "Dimasik",
-                    Lastname = "Hranoskyi",
-                    Password = HashPasswordHelper.HashPassword("admindima"),
-                    Age = 19,
-                    Role = Role.Admin
+                    new User()
+                    {
+                        Id = 1,
+                        Username = "admin",
+                        Email = "secauto.admin@gmail.com",
+                        Name = "Vlad",
+                        Lastname = "Linnik",
+                        Password = HashPasswordHelper.HashPassword("adminvlad"),
+                        Age = 19,
+                        Role = Role.Admin
+                    },
+                    new User()
+                    {
+                        Id = 2,
+                        Username = "administrator",
+                        Email = "secauto.administrator@gmail.com",
+                        Name = "Dimasik",
+                        Lastname = "Hranoskyi",
+                        Password = HashPasswordHelper.HashPassword("admindima"),
+                        Age = 19,
+                        Role = Role.Administrator
+                    }
                 });
             });
         }

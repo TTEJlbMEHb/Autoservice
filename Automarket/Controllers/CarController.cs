@@ -2,6 +2,7 @@
 using Automarket.Domain.Entity;
 using Automarket.Domain.Enum;
 using Automarket.Domain.ViewModels.Car;
+using Automarket.Service.Implementations;
 using Automarket.Service.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -10,22 +11,46 @@ namespace Automarket.Controllers
 {
     public class CarController : Controller
     {
-        private readonly ICarServise _carService;
+        private readonly ICarService _carService;
+        private readonly IAccountService _accountService;
 
-        public CarController(ICarServise carService)
+        public CarController(ICarService carService, IAccountService accountService)
         {
             _carService = carService;
+            _accountService = accountService;
         }
 
         [HttpGet]
         public async Task<IActionResult> GetCars()
-        {   
-            var response = await _carService.GetCars();
+        {
+            string userEmail = GetUserUserEmail();
+            ViewBag.UserId = await _accountService.GetIdByEmail(userEmail);
+
+            var response = await _carService.GetCars();           
             if (response.StatusCode == Domain.Enum.StatusCode.OK)
             {
-                return View(response.Data.ToList());
+                return View(response.Data);
             }
-            return RedirectToAction("Error");
+            else if (response.StatusCode == Domain.Enum.StatusCode.ObjectNotFound)
+            {
+                return View();
+            }
+            return RedirectToAction("Error", "Home");
+        }
+
+        private string GetUserUserEmail()
+        {
+            if (HttpContext.User.Identity.IsAuthenticated)
+            {
+                var UserEmail = User.Identity.Name;
+
+                if (UserEmail != null)
+                {
+                    return UserEmail;
+                }
+            }
+
+            return 0.ToString();
         }
 
         //[HttpGet]
@@ -42,12 +67,15 @@ namespace Automarket.Controllers
         [HttpGet]
         public async Task<IActionResult> GetCar(long id)
         {
+            string userEmail = GetUserUserEmail();
+            ViewBag.UserId = await _accountService.GetIdByEmail(userEmail);
+
             var response = await _carService.GetCar(id);
             if (response.StatusCode == Domain.Enum.StatusCode.OK)
             {
                 return View(response.Data);
             }
-            return View(response.Data);
+            return RedirectToAction("Error", "Home");
         }
 
         [Authorize(Roles = "Admin")]
@@ -58,7 +86,7 @@ namespace Automarket.Controllers
             {
                 return RedirectToAction("GetCars");
             }
-            return RedirectToAction("Error");
+            return RedirectToAction("Error", "Home");
         }
 
         [HttpGet]
@@ -74,7 +102,7 @@ namespace Automarket.Controllers
             {
                 return View(response.Data);
             }
-            return RedirectToAction("Error");
+            return RedirectToAction("Error", "Home");
         }
 
         [HttpPost]

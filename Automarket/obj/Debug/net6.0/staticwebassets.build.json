@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "bSr4uFD89swlPLmTSC4vXoxGYuJj5PvM5bXZDiBY4KQ=",
+  "Hash": "McIZZdCU5BPwDaImkihZJa3R6VIouzbIHnbSUmxcfh4=",
   "Source": "Automarket",
   "BasePath": "_content/Automarket",
   "Mode": "Default",
@@ -168,6 +168,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "D:\\Visual Studio\\ASP.Net\\Automarket\\Automarket\\wwwroot\\img\\404_bg.jpg",
+      "SourceId": "Automarket",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Visual Studio\\ASP.Net\\Automarket\\Automarket\\wwwroot\\",
+      "BasePath": "_content/Automarket",
+      "RelativePath": "img/404_bg.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\404_bg.jpg"
+    },
+    {
+      "Identity": "D:\\Visual Studio\\ASP.Net\\Automarket\\Automarket\\wwwroot\\img\\404_bg1.jpg",
+      "SourceId": "Automarket",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Visual Studio\\ASP.Net\\Automarket\\Automarket\\wwwroot\\",
+      "BasePath": "_content/Automarket",
+      "RelativePath": "img/404_bg1.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\404_bg1.jpg"
     },
     {
       "Identity": "D:\\Visual Studio\\ASP.Net\\Automarket\\Automarket\\wwwroot\\img\\add_to_busket.png",
@@ -797,6 +831,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\new_car.png"
+    },
+    {
+      "Identity": "D:\\Visual Studio\\ASP.Net\\Automarket\\Automarket\\wwwroot\\img\\no_items.png",
+      "SourceId": "Automarket",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Visual Studio\\ASP.Net\\Automarket\\Automarket\\wwwroot\\",
+      "BasePath": "_content/Automarket",
+      "RelativePath": "img/no_items.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\no_items.png"
     },
     {
       "Identity": "D:\\Visual Studio\\ASP.Net\\Automarket\\Automarket\\wwwroot\\img\\online_automarket.png",

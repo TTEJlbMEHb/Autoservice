@@ -9,20 +9,20 @@ using System.Threading.Tasks;
 
 namespace Automarket.Service.Interfaces
 {
-    public interface ICarServise
+    public interface ICarService
     {
         BaseResponse<Dictionary<int, string>> GetTypes();
 
-        Task<IBaseResponce<List<Car>>> GetCars();
+        Task<IBaseResponse<List<Car>>> GetCars();
 
-        //Task<IBaseResponce<List<Car>>> GetCars(string request);
+        //Task<IBaseResponse<List<Car>>> GetCars(string request);
 
-        Task<IBaseResponce<CarViewModel>> GetCar(long id);
+        Task<IBaseResponse<CarViewModel>> GetCar(long id);
 
-        Task<IBaseResponce<Car>> CreateCar(CarViewModel car);
+        Task<IBaseResponse<Car>> CreateCar(CarViewModel car);
 
-        Task<IBaseResponce<bool>> DeleteCar(long id);
+        Task<IBaseResponse<bool>> DeleteCar(long id);
 
-        Task<IBaseResponce<Car>> Edit(long id, CarViewModel model);
+        Task<IBaseResponse<Car>> Edit(long id, CarViewModel model);
     }
 }

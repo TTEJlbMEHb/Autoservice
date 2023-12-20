@@ -68,7 +68,7 @@ namespace Automarket.Controllers
             {
                 return View(response.Data);
             }
-            return View(response.Data);
+            return RedirectToAction("Error", "Home");
         }
 
         [HttpGet]
@@ -79,8 +79,9 @@ namespace Automarket.Controllers
             {
                 return View(response.Data);
             }
-            return View(response.Data);
+            return RedirectToAction("Error", "Home");
         }
+
 
         [HttpPost]
         public async Task<IActionResult> Save(User model)

@@ -11,7 +11,7 @@
 
     bool admin = User.IsInRole("Administrator") || User.IsInRole("Admin");
 
-    bool availible = true;
+    bool available = true;
 
     var itemCount = 0;
 }
@@ -34,7 +34,7 @@
             <section>
                 <div class="pages_path">
                     <a class="home_icon" asp-controller="Home" asp-action="Index"></a>
-                    <a class="path_current_page">Consumables</a>
+                    <a class="path_current_page" asp-controller="Car" asp-action="GetCars">Consumables</a>
                     <a class="path_current_page inactive">@Model.Model</a>
                 </div>
             </section>
@@ -75,7 +75,7 @@
                     <div class="item_info">
                         <h3 class="item_info_name">@Model.Name @Model.Model</h3>
                         <section class="item_undername">
-                            @if (!availible)
+                            @if (!available)
                             {
                                 @if (admin)
                                 {
@@ -220,7 +220,7 @@
                                     <span class="mini_buy_button_text">Buy</span>
                                 </a>
                                 <section class="item_undername">
-                                    @if (!availible)
+                                    @if (!available)
                                     {
                                         @if (admin)
                                         {

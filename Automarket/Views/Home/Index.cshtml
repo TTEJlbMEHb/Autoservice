@@ -1,4 +1,7 @@
-﻿@{
+﻿@using Automarket.Domain.Entity;
+@model long
+
+@{
     ViewData["Title"] = "Home Page";
 }
 
@@ -10,9 +13,9 @@
                     <span class="upper_mainpage_text">AutoService</span><br />
                     <span class="middle_mainpage_text yellow_text">DREAM CARS</span><br />
                 </div>
-                <button class="readmore_button" onclick="window.location.href='https://localhost:7085/'">
+                <a class="readmore_button" href="">
                     <span class="readmore_text">Read More</span>
-                </button>
+                </a>
             </div>
             <div class="main_layout"></div>
             <div class="body_color"></div>
@@ -137,7 +140,7 @@
                 <img class="secular_oil_scaled" src="~/img/secular_oil.png" alt="Motor oil" />
                 <div class="partner_text">
                     <h3 class="partner_title">High-quality motor oil <p>From our partners</p></h3>
-                    <button class="partner_button">SecAuto</button>
+                    <a class="partner_button" href="">SecAuto</a>
                 </div>
                 <img class="motor_icon" src="~/img/engine_icon1.png" alt="Engine icon" />
             </div>

@@ -42,7 +42,7 @@
                     <a class="back_change_link" asp-controller="Account" asp-action="Profile" asp-route-id="@Model.Id">
                         <img class="back_change_button" src="~/img/back_black.png" alt="Back button" />
                     </a>
-                    <h2 class="profile_title">My Account</h2>
+                    <h2 class="profile_title">Credentials editing</h2>
                     <a class="save_profile_button" asp-controller="Account" asp-action="Save">
                         <span class="settings_text">Save</span>
                     </a>                   
@@ -54,7 +54,7 @@
                             <div>
                                 <label class="profile_label" for="login">Login</label>
                                 <input class="profile_input" asp-for="Email"
-                                       type="email" name="login" />
+                                       type="email" name="login" readonly disabled/>
                             </div>
                             <div>
                                 <label class="profile_label" for="username">Username</label>
@@ -83,7 +83,7 @@
                             <div>
                                 <label class="profile_label" for="role">Role</label>
                                 <input class="profile_input" asp-for="Role"
-                                       type="text" name="role" />
+                                       type="text" name="role" readonly disabled/>
                             </div>
                         </div>
                     </form>

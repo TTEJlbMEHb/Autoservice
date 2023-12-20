@@ -28,8 +28,8 @@ namespace Automarket.Domain.ViewModels.Account
         //public string RepeatPassword { get; set; }
 
         [Required(ErrorMessage = "Enter your name")]
-        [MinLength(1, ErrorMessage = "Password must be greater than 1")]
-        [MaxLength(30, ErrorMessage = "Password must be less than 30")]
+        [MinLength(1, ErrorMessage = "Name must be greater than 1")]
+        [MaxLength(30, ErrorMessage = "Name must be less than 30")]
         public string Name { get; set; }
     }
 }

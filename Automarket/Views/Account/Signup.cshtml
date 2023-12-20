@@ -9,6 +9,7 @@
 
 @{
     Layout = null;
+    bool validationErrors = ViewData.ModelState.Values.Any(e => e.Errors.Any());
     <title>Signup - Automarket</title>
 }
 
@@ -17,7 +18,10 @@
     <div class="vertical_stripe"></div>
     <main>        
         <div class="login_container">
-            @* <div class="validatit_container" asp-validation-summary="All"></div> *@
+            @if (validationErrors)
+            {
+                <div class="validating_container" asp-validation-summary="All"></div>
+            }
             <h2 class="login_title">Create your Account</h2>
             <h4 class="lower_login_text">
                 Since this is your first trip, you will need to provide
