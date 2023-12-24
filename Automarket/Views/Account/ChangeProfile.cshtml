@@ -1,6 +1,9 @@
 ﻿@using Automarket.Domain.Entity;
-@model User;
+@using Automarket.Domain.Enum;
+@using Automarket.Domain.ViewModels.Account;
+@model AccountViewModel
 
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
 <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
 <link rel="stylesheet" href="~/css/profile.css" asp-append-version="true" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -11,6 +14,8 @@
 @{
     Layout = null;
     <title>Change Profile - Automarket</title>
+    bool validationErrors = ViewData.ModelState.Values.Any(e => e.Errors.Any());
+    bool admin = User.IsInRole("Administrator") || User.IsInRole("Admin");
 }
 
 <body>
@@ -42,50 +47,65 @@
                     <a class="back_change_link" asp-controller="Account" asp-action="Profile" asp-route-id="@Model.Id">
                         <img class="back_change_button" src="~/img/back_black.png" alt="Back button" />
                     </a>
-                    <h2 class="profile_title">Credentials editing</h2>
-                    <a class="save_profile_button" asp-controller="Account" asp-action="Save">
-                        <span class="settings_text">Save</span>
-                    </a>                   
+                    <h2 class="profile_title">Credentials editing</h2>     
+                    @if (validationErrors)
+                    {
+                        <div class="validating_container accountedit_validation" asp-validation-summary="All"></div>
+                    }
                 </div>
                 <h3 class="user_title">User information</h3>
                 <div class="user_information">
-                    <form>
+                    <form asp-controller="Account" asp-action="ChangeProfile" asp-route-id="@Model.Id" method="post">
                         <div class="input_column">
                             <div>
-                                <label class="profile_label" for="login">Login</label>
-                                <input class="profile_input" asp-for="Email"
-                                       type="email" name="login" readonly disabled/>
+                                <label class="profile_label" for="Email">Login</label>
+                                <input class="profile_input" asp-for="Email" type="email" name="Email" readonly />
+                                <input type="hidden" asp-for="Email" name="Email" />
                             </div>
                             <div>
-                                <label class="profile_label" for="username">Username</label>
-                                <input class="profile_input" asp-for="Username"
-                                       type="text" name="username" />
+                                <label class="profile_label" for="Username">Username</label>
+                                <input class="profile_input" asp-for="Username" type="text" name="Username" />
                             </div>
                         </div>
                         <div class="input_column">
                             <div>
-                                <label class="profile_label" for="first_name">First name</label>
-                                <input class="profile_input" asp-for="Name"
-                                       type="text" name="first_name" />
+                                <label class="profile_label" for="Name">First name</label>
+                                <input class="profile_input" asp-for="Name" type="text" name="Name" />
                             </div>
                             <div>
-                                <label class="profile_label" for="last_name">Last name</label>
-                                <input class="profile_input" asp-for="Lastname"
-                                       type="text" name="last_name" />
+                                <label class="profile_label" for="Lastname">Last name</label>
+                                <input class="profile_input" asp-for="Lastname" type="text" name="Lastname" />
                             </div>
                         </div>
                         <div class="input_column">
                             <div>
-                                <label class="profile_label" for="age">Age</label>
-                                <input class="profile_input" asp-for="Age"
-                                       type="number" name="age" min="12" max="120" />
+                                <label class="profile_label" for="Age">Age</label>
+                                <input class="profile_input" asp-for="Age" type="number" name="Age" min="12" max="120" />
                             </div>
-                            <div>
-                                <label class="profile_label" for="role">Role</label>
-                                <input class="profile_input" asp-for="Role"
-                                       type="text" name="role" readonly disabled/>
-                            </div>
+                            @if (admin)
+                            {
+                                <div>
+                                    <label class="profile_label" for="Role">Role</label>
+                                    <select class="profile_input" asp-for="Role" asp-items="Html.GetEnumSelectList<Role>()">
+                                        <option class="" value="">Select Role</option>
+                                    </select>
+                                </div>
+                            }
+                            else
+                            {
+                                <div>
+                                    <label class="profile_label" for="Role">Role</label>
+                                    <input class="profile_input" asp-for="Role" type="text" name="Role" readonly />
+                                    <input type="hidden" asp-for="Role" name="Role" />
+                                </div>
+                            }                           
                         </div>
+
+                        <validation-summary></validation-summary>
+
+                        <button class="save_profile_button" type="submit">
+                            <span class="settings_text">Save</span>
+                        </button>
                     </form>
                 </div>
 

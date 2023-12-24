@@ -1,5 +1,6 @@
 ﻿using Automarket.DAL.Interfaces;
 using Automarket.Domain.Entity;
+using Automarket.Domain.Helpers;
 using Automarket.Models;
 using Automarket.Service.Implementations;
 using Automarket.Service.Interfaces;
@@ -12,53 +13,48 @@ namespace Automarket.Controllers
     {
         private readonly ILogger<HomeController> _logger;
         private readonly IAccountService _accountService;
+        private readonly IHttpContextAccessor _httpContextAccessor;
 
-        public HomeController(ILogger<HomeController> logger, IAccountService accountService)
+        public HomeController(ILogger<HomeController> logger, IAccountService accountService,
+            IHttpContextAccessor httpContextAccessor)
         {
             _logger = logger;
             _accountService = accountService;
+            _httpContextAccessor = httpContextAccessor;
         }
 
         public async Task<IActionResult> Index()
         {
-            string userEmail = GetUserUserEmail();
+            var userEmailHelper = new GetUserEmailHelper(_httpContextAccessor);
+            string userEmail = userEmailHelper.GetUserUserEmail();
+
             var response = await _accountService.GetIdByEmail(userEmail);
             ViewBag.UserId = response;
             if (response.StatusCode == Domain.Enum.StatusCode.OK)
             {
                 return View(response.Data);
             }
-            else if (response.StatusCode == Domain.Enum.StatusCode.ObjectNotFound)
+            else if (response.StatusCode == Domain.Enum.StatusCode.InternalServerError)
             {
-                return View();
+                return RedirectToAction("InternalServerError", "Errors");
             }
-            return RedirectToAction("Error", "Home");
+            return RedirectToAction("Error", "Errors");
         }
 
-        private string GetUserUserEmail()
+        public async Task<IActionResult> About()
         {
-            if (HttpContext.User.Identity.IsAuthenticated)
-            {
-                var UserEmail = User.Identity.Name;
+            var userEmailHelper = new GetUserEmailHelper(_httpContextAccessor);
+            string userEmail = userEmailHelper.GetUserUserEmail();
 
-                if (UserEmail != null)
-                {
-                    return UserEmail;
-                }
-            }
+            var response = await _accountService.GetIdByEmail(userEmail);
+            ViewBag.UserId = response;
 
-            return 0.ToString();
+            return View();
         }
 
         public IActionResult Privacy()
         {
             return View();
-        }
-
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public async Task<IActionResult> Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
     }
 }

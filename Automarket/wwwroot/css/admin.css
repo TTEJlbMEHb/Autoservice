@@ -1,0 +1,54 @@
+﻿.users_table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #f5f5f5;
+    text-align: center;
+}
+
+.user_info_titles {
+    background-color: #999;
+    color: white;
+    font-family: "Poppins";
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.users_info_tr:hover {
+    background-color: #ccc;
+    transition: 0.2s;
+}
+
+.user_info {
+    font-family: "Poppins";
+    font-size: 15px;
+    font-weight: 700;
+    padding: 12px;
+    height: 45px;
+    margin: 0 auto;
+}
+
+.admin_panel_buttons {
+    padding: 7px 15px;
+}
+
+.adminpanel_username {
+    position: absolute;
+    top: 105px;
+    right: 520px;
+}
+
+.adminpanel_container {
+    margin-top: 40px;
+}
+
+.delete_account {
+    position: absolute;
+    top: 35px;
+    left: 550px;
+}
+
+.account_delete_confirmation {
+    margin-bottom: 50px;
+}
+

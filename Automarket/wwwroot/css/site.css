@@ -108,6 +108,26 @@ html {
     color: black;
 }
 
+.adminpanel_button {
+    position: absolute;
+    margin-left: 10px;
+    display: inline-block;   
+    padding: 12px 15px;
+    background-color: #007BFF;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-family: "Poppins";
+    font-size: 15px;
+    font-weight: 700;
+    transition: background-color 0.3s;
+}
+
+.adminpanel_button:hover {
+    background-color: #0056b3;
+    color: white;
+}
+
 .separator {
     position: absolute;
     margin-left: 30%;
@@ -733,40 +753,6 @@ label {
     top: 170px;
 }
 
-.check_services_button {
-    border: 3px solid black;
-    background: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto;
-    margin-top: 20px;
-    margin-bottom: 10px;
-    width: 100px;
-    height: 40px;
-    padding-left: 35px;
-    text-align: center;
-    align-items: center;
-    text-decoration: none;
-    transition: 0.4s;
-    color: black;
-    background-image: url("/img/search_icon.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-size: 25px;
-    background-position: 13% 50%;
-}
-
-.check_services_button:hover {
-    background-color: #ebe753;
-    color: black;
-    background-image: url("/img/search_icon.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-size: 25px;
-    background-position: 17% 50%;
-}
-
 .validating_container {
     position: absolute;
     top: 50px;
@@ -880,4 +866,168 @@ label {
 
 .error_back_button:hover .readmore_text {
     color: black;
+}
+
+.about_container {
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+}
+
+.about_text_container {
+    padding-top: 50px;
+}
+
+.about_img {
+    width: 450px;
+    height: 550px;
+}
+
+.about_title {
+    font-size: 35px;
+    font-family: "Poppins";
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: black;
+}
+
+.about_text {
+    font-size: 70px;
+    margin: 0;
+}
+
+.about_description_container {
+    margin-top: 50px;
+    width: 500px;
+    height: 270px;
+    background-color: #222;
+    padding: 35px;
+}
+
+.about_description {   
+    font-size: 18px;
+    font-family: "Poppins";
+    color: white;   
+}
+
+.stats_container {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    margin-top: 70px;
+    margin-bottom: 80px;
+}
+
+.stats_cell {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    background-color: #222;
+    width: 315px;
+    height: 250px;
+    color: #f7ce50;
+}
+
+.stats_cell::after {
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 250px;
+    background-color: gray;
+    right: 0;
+    top: 0;
+}
+
+.cell_title {
+    font-size: 40px;
+    font-family: "Montserrat";
+    color: #f7ce50;
+    margin-left: 50px;
+}
+
+.cell_text {
+    font-size: 25px;
+    font-family: "Poppins";
+    color: white;
+}
+
+.cell_icon {
+    position: absolute;
+    margin-bottom: 45px;
+    width: 50px;
+    height: 50px;
+}
+
+.clients_num {
+    margin-left: 65px;
+}
+
+.items_num {
+    margin-left: 80px;
+}
+
+.years_num {
+    margin-left: 50px;
+}
+
+.contacts_container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 200px;
+    color: #f7ce50;
+}
+
+.contacts {
+    font-size: 70px;
+    font-family: "Poppins";
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: black;
+    margin: 260px auto;
+}
+
+.contacts_vertical_stripe {
+    width: 100vh;
+    height: 600px;
+    background-color: #222;
+}
+
+.contacts_info {
+    display: flex;
+    flex-direction: column;
+    margin-top: 100px;
+    margin-left: 100px;
+}
+
+.contacts_item {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 100px;
+}
+
+.contacts_title {
+    font-size: 40px;
+    font-family: "Montserrat";
+    color: white;
+    margin-left: 55px;
+    margin-top: -5px;
+}
+
+.contacts_text {
+    position: absolute;
+    font-size: 20px;
+    font-family: "Poppins";
+    margin-top: 60px;
+}
+
+.contacts_bg {
+    position: absolute;
+    left: 8%;
+    top: 59%;
+    width: 650px;
+    height: 650px;
+    opacity: 0.025;
 }

@@ -14,14 +14,20 @@ namespace Automarket.Service.Interfaces
     {
         Task<BaseResponse<ClaimsIdentity>> Signup(SignupViewModel model);
 
-        Task<BaseResponse<ClaimsIdentity>> Login(LoginViewModel model);
+        Task<BaseResponse<ClaimsIdentity>> Login(LoginViewModel model);      
 
         Task<BaseResponse<bool>> ChangePassword(ChangePasswordViewModel model);
 
-        Task<BaseResponse<User>> GetProfile(long id);
+        Task<BaseResponse<AccountViewModel>> GetProfile(long id);
+
+        Task<IBaseResponse<List<User>>> GetUsers();
 
         Task<BaseResponse<long>> GetIdByEmail(string email);
 
-        Task<BaseResponse<User>> Save(User model);
+        Task<BaseResponse<User>> CreateAccount(AccountViewModel user);
+
+        Task<BaseResponse<User>> EditAccount(long id, AccountViewModel model);
+
+        Task<BaseResponse<bool>> DeleteAccount(long id);
     }
 }

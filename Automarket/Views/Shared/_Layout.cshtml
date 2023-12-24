@@ -8,7 +8,8 @@
     <link rel="stylesheet" href="~/css/layout.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/card.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/css/save.css" asp-append-version="true" />   
+    <link rel="stylesheet" href="~/css/save.css" asp-append-version="true" />  
+    <link rel="stylesheet" href="~/css/admin.css" asp-append-version="true" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&family=Poppins&display=swap" rel="stylesheet">
@@ -17,9 +18,10 @@
 
 @{
     bool authenticated = User.Identity.IsAuthenticated;
+    bool admin = User.IsInRole("Administrator") || User.IsInRole("Admin");
 
     bool searchForm = false;
-    if (ViewData["Title"] == "Consumables" || ViewData["Title"].ToString().Contains("Info"))
+    if (ViewData["Title"] != "Home Page" && ViewData["Title"] != "About")
     {
         searchForm = true;
     }
@@ -32,6 +34,12 @@
             <a asp-controller="Home" asp-action="Index" class="logo_link">
                 <span class="white_text">Sec</span><span class="yellow_text">Auto</span>
             </a>
+            @if (admin)
+            {
+                <a asp-controller="Admin" asp-action="Adminpanel" class="adminpanel_button">
+                    <span>Admin Panel</span>
+                </a>
+            }
         </div>
 
         @if (searchForm)
@@ -64,7 +72,8 @@
                         </div>
                     </a>
 
-                    <a class="header_link" asp-controller="Account" asp-action="Profile" asp-route-id="@ViewBag.UserId.Data">
+                    <a class="header_link" asp-controller="Account" asp-action="Profile" 
+                        asp-route-id="@((ViewBag.UserId != null) ? ViewBag.UserId.Data : null)">
                         <div class="text_icon_container">
                             <img src="~/img/profile_icon.png" alt="profile icon" class="header_icon" />
                             <span class="icon_text">Account</span>
@@ -112,7 +121,8 @@
             <div class="separator "></div>
             <div class="first_column_footer">
                 <ul class="first_ul_footer">
-                    <li class="footer_li"><a href="" class="white_text"><span class="footer_text">About</span></a></li>
+                    <li class="footer_li"><a asp-controller="Home" asp-action="About" 
+                        class="white_text"><span class="footer_text">About</span></a></li>
                     <li class="footer_li"><a href="" class="white_text"><span class="footer_text">Products</span></a></li>
                     <li class="footer_li"><a href="" class="white_text"><span class="footer_text">Support</span></a></li>
                 </ul>
@@ -177,6 +187,7 @@
     <script src="~/js/site.js" asp-append-version="true"></script>
     <script src="~/js/cards.js" asp-append-version="true"></script>
     <script src="~/js/save.js" asp-append-version="true"></script>
+    <script src="~/js/admin.js" asp-append-version="true"></script>
 
     @await RenderSectionAsync("Scripts", required: false)
 

@@ -27,6 +27,7 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
         options.AccessDeniedPath = new Microsoft.AspNetCore.Http.PathString("/Account/Login");
     });
 
+builder.Services.AddHttpContextAccessor();
 builder.Services.InitializeRepositories();
 builder.Services.InitializeServices();
 
@@ -36,7 +37,9 @@ var app = builder.Build();
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
-    app.UseExceptionHandler("/Home/Error");
+    app.UseExceptionHandler("/Errors/Error");
+    app.UseStatusCodePagesWithReExecute("/Errors/InternalServerError");
+
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
@@ -58,7 +61,7 @@ app.UseEndpoints(endpoints =>
     endpoints.MapControllerRoute(
         name: "Error",
         pattern: "{*url}",
-        defaults: new { controller = "Home", action = "Error" }
+        defaults: new { controller = "Errors", action = "Error" }
     );
 });
 

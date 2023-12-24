@@ -1,6 +1,7 @@
 ﻿using Automarket.DAL.Interfaces;
 using Automarket.Domain.Entity;
 using Automarket.Domain.Enum;
+using Automarket.Domain.Helpers;
 using Automarket.Domain.ViewModels.Car;
 using Automarket.Service.Implementations;
 using Automarket.Service.Interfaces;
@@ -13,17 +14,20 @@ namespace Automarket.Controllers
     {
         private readonly ICarService _carService;
         private readonly IAccountService _accountService;
+        private readonly IHttpContextAccessor _httpContextAccessor;
 
-        public CarController(ICarService carService, IAccountService accountService)
+        public CarController(ICarService carService, IAccountService accountService, IHttpContextAccessor httpContextAccessor)
         {
             _carService = carService;
             _accountService = accountService;
+            _httpContextAccessor = httpContextAccessor;
         }
 
         [HttpGet]
         public async Task<IActionResult> GetCars()
         {
-            string userEmail = GetUserUserEmail();
+            var userEmailHelper = new GetUserEmailHelper(_httpContextAccessor);
+            string userEmail = userEmailHelper.GetUserUserEmail();
             ViewBag.UserId = await _accountService.GetIdByEmail(userEmail);
 
             var response = await _carService.GetCars();           
@@ -31,26 +35,11 @@ namespace Automarket.Controllers
             {
                 return View(response.Data);
             }
-            else if (response.StatusCode == Domain.Enum.StatusCode.ObjectNotFound)
+            else if (response.StatusCode == Domain.Enum.StatusCode.InternalServerError)
             {
-                return View();
+                return RedirectToAction("InternalServerError", "Errors");
             }
-            return RedirectToAction("Error", "Home");
-        }
-
-        private string GetUserUserEmail()
-        {
-            if (HttpContext.User.Identity.IsAuthenticated)
-            {
-                var UserEmail = User.Identity.Name;
-
-                if (UserEmail != null)
-                {
-                    return UserEmail;
-                }
-            }
-
-            return 0.ToString();
+            return RedirectToAction("Error", "Errors");
         }
 
         //[HttpGet]
@@ -67,7 +56,8 @@ namespace Automarket.Controllers
         [HttpGet]
         public async Task<IActionResult> GetCar(long id)
         {
-            string userEmail = GetUserUserEmail();
+            var userEmailHelper = new GetUserEmailHelper(_httpContextAccessor);
+            string userEmail = userEmailHelper.GetUserUserEmail();
             ViewBag.UserId = await _accountService.GetIdByEmail(userEmail);
 
             var response = await _carService.GetCar(id);
@@ -75,39 +65,65 @@ namespace Automarket.Controllers
             {
                 return View(response.Data);
             }
-            return RedirectToAction("Error", "Home");
+            else if (response.StatusCode == Domain.Enum.StatusCode.InternalServerError)
+            {
+                return RedirectToAction("InternalServerError", "Errors");
+            }
+            return RedirectToAction("Error", "Errors");
         }
 
-        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Delete (long id)
         {
+            if (!User.IsInRole("Admin"))
+            {
+                return RedirectToAction("Forbidden", "Errors");
+            }
+
             var response = await _carService.DeleteCar(id);
+
             if (response.StatusCode == Domain.Enum.StatusCode.OK)
             {
                 return RedirectToAction("GetCars");
             }
-            return RedirectToAction("Error", "Home");
+            else if (response.StatusCode == Domain.Enum.StatusCode.InternalServerError)
+            {
+                return RedirectToAction("InternalServerError", "Errors");
+            }
+            return RedirectToAction("Error", "Errors");
         }
 
         [HttpGet]
-        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Save(long id)
         {
+            if (!User.IsInRole("Admin"))
+            {
+                return RedirectToAction("Forbidden", "Errors");
+            }
             if (id == 0)
             {
                 return View();
             }
+
             var response = await _carService.GetCar(id);
+
             if (response.StatusCode == Domain.Enum.StatusCode.OK)
             {
                 return View(response.Data);
             }
-            return RedirectToAction("Error", "Home");
+            else if (response.StatusCode == Domain.Enum.StatusCode.InternalServerError)
+            {
+                return RedirectToAction("InternalServerError", "Errors");
+            }
+            return RedirectToAction("Error", "Errors");
         }
 
         [HttpPost]
         public async Task<IActionResult> Save(CarViewModel carViewModel)
         {
+            var userEmailHelper = new GetUserEmailHelper(_httpContextAccessor);
+            string userEmail = userEmailHelper.GetUserUserEmail();
+            ViewBag.UserId = await _accountService.GetIdByEmail(userEmail);
+
             if (!ModelState.IsValid)
             {
                 if (carViewModel.Id == 0)

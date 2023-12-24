@@ -58,7 +58,7 @@ namespace Automarket.Service.Implementations
                     return new BaseResponse<CarViewModel>()
                     {
                         Description = "Not found",
-                        StatusCode = StatusCode.ObjectNotFound
+                        StatusCode = StatusCode.NotFound
                     };
                 }
 
@@ -96,15 +96,6 @@ namespace Automarket.Service.Implementations
             try
             {
                 var cars = await _carRepository.GetAll().ToListAsync();
-
-                if (!cars.Any())
-                {
-                    return new BaseResponse<List<Car>>()
-                    {
-                        Description = "0 elements found",
-                        StatusCode = StatusCode.ObjectNotFound
-                    };
-                }
 
                 return new BaseResponse<List<Car>>()
                 {
@@ -202,7 +193,7 @@ namespace Automarket.Service.Implementations
                     return new BaseResponse<bool>()
                     {
                         Description = "User not found",
-                        StatusCode = StatusCode.ObjectNotFound,
+                        StatusCode = StatusCode.NotFound,
                         Data = false
                     };
                 }
@@ -237,7 +228,7 @@ namespace Automarket.Service.Implementations
                     return new BaseResponse<Car>()
                     {
                         Description = "Car not found",
-                        StatusCode = StatusCode.ObjectNotFound
+                        StatusCode = StatusCode.NotFound
                     };
                 }
 

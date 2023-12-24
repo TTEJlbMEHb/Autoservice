@@ -32,7 +32,7 @@ namespace Automarket.DAL.Repositories
         public async Task Delete(User entity)
         {
             _db.User.Remove(entity);
-            //await _db.SaveChangesAsync();
+            await _db.SaveChangesAsync();
         }
 
         public async Task<User> Update(User entity)

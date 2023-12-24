@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "McIZZdCU5BPwDaImkihZJa3R6VIouzbIHnbSUmxcfh4=",
+  "Hash": "NRbrZyWk7ywFK7V4jATx1lxq/62XXlWJk8iO+RIyAMQ=",
   "Source": "Automarket",
   "BasePath": "_content/Automarket",
   "Mode": "Default",
@@ -49,6 +49,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "D:\\Visual Studio\\ASP.Net\\Automarket\\Automarket\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\Automarket.bundle.scp.css"
+    },
+    {
+      "Identity": "D:\\Visual Studio\\ASP.Net\\Automarket\\Automarket\\wwwroot\\css\\admin.css",
+      "SourceId": "Automarket",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Visual Studio\\ASP.Net\\Automarket\\Automarket\\wwwroot\\",
+      "BasePath": "_content/Automarket",
+      "RelativePath": "css/admin.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\admin.css"
     },
     {
       "Identity": "D:\\Visual Studio\\ASP.Net\\Automarket\\Automarket\\wwwroot\\css\\card.css",
@@ -202,6 +219,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\404_bg1.jpg"
+    },
+    {
+      "Identity": "D:\\Visual Studio\\ASP.Net\\Automarket\\Automarket\\wwwroot\\img\\about_bg.jpeg",
+      "SourceId": "Automarket",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Visual Studio\\ASP.Net\\Automarket\\Automarket\\wwwroot\\",
+      "BasePath": "_content/Automarket",
+      "RelativePath": "img/about_bg.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\about_bg.jpeg"
     },
     {
       "Identity": "D:\\Visual Studio\\ASP.Net\\Automarket\\Automarket\\wwwroot\\img\\add_to_busket.png",
@@ -952,6 +986,40 @@
       "OriginalItemSpec": "wwwroot\\img\\pen_white1.png"
     },
     {
+      "Identity": "D:\\Visual Studio\\ASP.Net\\Automarket\\Automarket\\wwwroot\\img\\people-outline.svg",
+      "SourceId": "Automarket",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Visual Studio\\ASP.Net\\Automarket\\Automarket\\wwwroot\\",
+      "BasePath": "_content/Automarket",
+      "RelativePath": "img/people-outline.svg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\people-outline.svg"
+    },
+    {
+      "Identity": "D:\\Visual Studio\\ASP.Net\\Automarket\\Automarket\\wwwroot\\img\\pricetags-outline.svg",
+      "SourceId": "Automarket",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Visual Studio\\ASP.Net\\Automarket\\Automarket\\wwwroot\\",
+      "BasePath": "_content/Automarket",
+      "RelativePath": "img/pricetags-outline.svg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\pricetags-outline.svg"
+    },
+    {
       "Identity": "D:\\Visual Studio\\ASP.Net\\Automarket\\Automarket\\wwwroot\\img\\profile_bg.jpg",
       "SourceId": "Automarket",
       "SourceType": "Discovered",
@@ -1103,6 +1171,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\telegram_icon.png"
+    },
+    {
+      "Identity": "D:\\Visual Studio\\ASP.Net\\Automarket\\Automarket\\wwwroot\\img\\time-outline.svg",
+      "SourceId": "Automarket",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Visual Studio\\ASP.Net\\Automarket\\Automarket\\wwwroot\\",
+      "BasePath": "_content/Automarket",
+      "RelativePath": "img/time-outline.svg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\time-outline.svg"
     },
     {
       "Identity": "D:\\Visual Studio\\ASP.Net\\Automarket\\Automarket\\wwwroot\\img\\twitch_icon.png",
@@ -1307,6 +1392,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\youtube_icon.png"
+    },
+    {
+      "Identity": "D:\\Visual Studio\\ASP.Net\\Automarket\\Automarket\\wwwroot\\js\\admin.js",
+      "SourceId": "Automarket",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Visual Studio\\ASP.Net\\Automarket\\Automarket\\wwwroot\\",
+      "BasePath": "_content/Automarket",
+      "RelativePath": "js/admin.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\admin.js"
     },
     {
       "Identity": "D:\\Visual Studio\\ASP.Net\\Automarket\\Automarket\\wwwroot\\js\\cards.js",

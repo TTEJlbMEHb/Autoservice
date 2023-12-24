@@ -1,0 +1,79 @@
+﻿@using Automarket.Domain.Entity
+@using Automarket.Domain.Enum;
+@model List<User>
+
+@{
+    ViewData["Title"] = "Admin Panel";
+}
+
+<main>
+    <div class="consumables_container">
+        <div class="admin_items_container">
+            <h2 class="consumables_title">SecAuto Admin Panel</h2>
+            <a asp-controller="Admin" asp-action="CreateAccount" class="add_item_admin">Add New</a>
+        </div>          
+
+        <table class="users_table">
+            <thead>
+                <tr class="user_info_titles">
+                    <th class="user_info">@Role.Admin</th>
+                    <th class="user_info">@Role.Administrator</th>
+                    <th class="user_info">@Role.Mechanic</th>
+                    <th class="user_info">@Role.User</th>
+                    <th class="user_info">Total users</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="users_info_tr">
+                    <td class="user_info">@(Model.Count(user => user.Role == Role.Admin))</td>
+                    <td class="user_info">@(Model.Count(user => user.Role == Role.Administrator))</td>
+                    <td class="user_info">@(Model.Count(user => user.Role == Role.Mechanic))</td>
+                    <td class="user_info">@(Model.Count(user => user.Role == Role.User))</td>
+                    <td class="user_info">@Model.Count()</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <table class="users_table">
+            <thead>
+                <tr class="user_info_titles">
+                    <th class="user_info">ID</th>
+                    <th class="user_info">Email</th>
+                    <th class="user_info">Role</th>
+                    <th class="user_info">Overview</th>
+                    <th class="user_info">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var user in Model)
+                {
+                    <tr class="users_info_tr">
+                        <td class="user_info">@user.Id</td>
+                        <td class="user_info">@user.Email</td>
+                        <td class="user_info">@user.Role</td>
+                        <td>
+                            <a class="edit_items admin_panel_buttons" asp-controller="Account" asp-action="Profile" asp-route-id="@user.Id">
+                                <span>Profile</span>
+                            </a>
+                        </td>
+                        <td>
+                            <a class="delete_items admin_panel_buttons" data-account-id="@user.Id">
+                                <span>Delete</span>
+                            </a>
+                            <div id="modal_delete_@user.Id" class="modal">
+                                <div class="modal-content">
+                                    <button class="close" data-account-id="@user.Id">&times;</button>
+                                    <span class="confirmation_title">Are you sure?</span>
+                                    <div class="confirmation_buttons">
+                                        <a class="confirmSave" id="confirmSave_@user.Id" asp-controller="Admin" asp-action="DeleteAccount" asp-route-id="@user.Id">Confirm</a>
+                                        <button class="confirmCancel" data-account-id="@user.Id">Cancel</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</main>

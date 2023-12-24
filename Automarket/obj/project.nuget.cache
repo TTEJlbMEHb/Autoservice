@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "o99XGpsIkQ3n4r7+I0E9d8spuuwgXnimVp0GMi+MEw6hPhbO0XeHZmIEfKLnVWL9YVxJYq3CkwTsm/qcQktjsQ==",
+  "dgSpecHash": "Euu/7o4jqJ+G6ZnInpWc9qo7u4wmvbMK4gDkV4p+wptd/we7EyGxGQgJVUWJmNdH2WmgV3KuEHaDQlMuinIvzQ==",
   "success": true,
   "projectFilePath": "D:\\Visual Studio\\ASP.Net\\Automarket\\Automarket\\Automarket.csproj",
   "expectedPackageFiles": [
@@ -57,6 +57,7 @@
     "C:\\Users\\vladl\\.nuget\\packages\\messagepack\\2.1.152\\messagepack.2.1.152.nupkg.sha512",
     "C:\\Users\\vladl\\.nuget\\packages\\messagepack.annotations\\2.1.152\\messagepack.annotations.2.1.152.nupkg.sha512",
     "C:\\Users\\vladl\\.nuget\\packages\\messagepackanalyzer\\2.1.152\\messagepackanalyzer.2.1.152.nupkg.sha512",
+    "C:\\Users\\vladl\\.nuget\\packages\\microsoft.aspnetcore.http.abstractions\\2.2.0\\microsoft.aspnetcore.http.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\vladl\\.nuget\\packages\\microsoft.aspnetcore.http.features\\5.0.17\\microsoft.aspnetcore.http.features.5.0.17.nupkg.sha512",
     "C:\\Users\\vladl\\.nuget\\packages\\microsoft.aspnetcore.razor.language\\6.0.0\\microsoft.aspnetcore.razor.language.6.0.0.nupkg.sha512",
     "C:\\Users\\vladl\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\5.0.0\\microsoft.bcl.asyncinterfaces.5.0.0.nupkg.sha512",

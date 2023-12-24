@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "+4wjF1v8rsgnEOCZqIfUVlKRupv2oWFv40p58EXXyfvCwWR+1I+KFmR77vHEmYUe/widmQ5dvRvnuu1sAJYstg==",
+  "dgSpecHash": "KNRyRnn7z8+gdviiTGu8AmjzZqbSvcxbOIimMmwim+QSGiSw8dz67zAyTdDJKSjbaEpBG4V7SoBSrm085JTc4w==",
   "success": true,
   "projectFilePath": "D:\\Visual Studio\\ASP.Net\\Automarket\\Automarket.Service\\Automarket.Service.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\vladl\\.nuget\\packages\\microsoft.aspnetcore.http.abstractions\\2.2.0\\microsoft.aspnetcore.http.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\vladl\\.nuget\\packages\\microsoft.aspnetcore.http.features\\5.0.17\\microsoft.aspnetcore.http.features.5.0.17.nupkg.sha512",
     "C:\\Users\\vladl\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\vladl\\.nuget\\packages\\microsoft.data.sqlclient\\2.1.4\\microsoft.data.sqlclient.2.1.4.nupkg.sha512",
@@ -45,6 +46,7 @@
     "C:\\Users\\vladl\\.nuget\\packages\\system.security.permissions\\4.7.0\\system.security.permissions.4.7.0.nupkg.sha512",
     "C:\\Users\\vladl\\.nuget\\packages\\system.security.principal.windows\\4.7.0\\system.security.principal.windows.4.7.0.nupkg.sha512",
     "C:\\Users\\vladl\\.nuget\\packages\\system.text.encoding.codepages\\4.7.0\\system.text.encoding.codepages.4.7.0.nupkg.sha512",
+    "C:\\Users\\vladl\\.nuget\\packages\\system.text.encodings.web\\4.5.0\\system.text.encodings.web.4.5.0.nupkg.sha512",
     "C:\\Users\\vladl\\.nuget\\packages\\system.windows.extensions\\4.7.0\\system.windows.extensions.4.7.0.nupkg.sha512"
   ],
   "logs": []

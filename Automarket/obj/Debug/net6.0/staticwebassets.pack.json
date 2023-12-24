@@ -9,6 +9,10 @@
       "PackagePath": "staticwebassets\\css\\TypeMates - Cera Round Pro Bold.otf"
     },
     {
+      "Id": "D:\\Visual Studio\\ASP.Net\\Automarket\\Automarket\\wwwroot\\css\\admin.css",
+      "PackagePath": "staticwebassets\\css\\admin.css"
+    },
+    {
       "Id": "D:\\Visual Studio\\ASP.Net\\Automarket\\Automarket\\wwwroot\\css\\card.css",
       "PackagePath": "staticwebassets\\css\\card.css"
     },
@@ -39,6 +43,10 @@
     {
       "Id": "D:\\Visual Studio\\ASP.Net\\Automarket\\Automarket\\wwwroot\\img\\404_bg1.jpg",
       "PackagePath": "staticwebassets\\img\\404_bg1.jpg"
+    },
+    {
+      "Id": "D:\\Visual Studio\\ASP.Net\\Automarket\\Automarket\\wwwroot\\img\\about_bg.jpeg",
+      "PackagePath": "staticwebassets\\img\\about_bg.jpeg"
     },
     {
       "Id": "D:\\Visual Studio\\ASP.Net\\Automarket\\Automarket\\wwwroot\\img\\add_to_busket.png",
@@ -217,6 +225,14 @@
       "PackagePath": "staticwebassets\\img\\pen_white1.png"
     },
     {
+      "Id": "D:\\Visual Studio\\ASP.Net\\Automarket\\Automarket\\wwwroot\\img\\people-outline.svg",
+      "PackagePath": "staticwebassets\\img\\people-outline.svg"
+    },
+    {
+      "Id": "D:\\Visual Studio\\ASP.Net\\Automarket\\Automarket\\wwwroot\\img\\pricetags-outline.svg",
+      "PackagePath": "staticwebassets\\img\\pricetags-outline.svg"
+    },
+    {
       "Id": "D:\\Visual Studio\\ASP.Net\\Automarket\\Automarket\\wwwroot\\img\\profile_bg.jpg",
       "PackagePath": "staticwebassets\\img\\profile_bg.jpg"
     },
@@ -251,6 +267,10 @@
     {
       "Id": "D:\\Visual Studio\\ASP.Net\\Automarket\\Automarket\\wwwroot\\img\\telegram_icon.png",
       "PackagePath": "staticwebassets\\img\\telegram_icon.png"
+    },
+    {
+      "Id": "D:\\Visual Studio\\ASP.Net\\Automarket\\Automarket\\wwwroot\\img\\time-outline.svg",
+      "PackagePath": "staticwebassets\\img\\time-outline.svg"
     },
     {
       "Id": "D:\\Visual Studio\\ASP.Net\\Automarket\\Automarket\\wwwroot\\img\\twitch_icon.png",
@@ -299,6 +319,10 @@
     {
       "Id": "D:\\Visual Studio\\ASP.Net\\Automarket\\Automarket\\wwwroot\\img\\youtube_icon.png",
       "PackagePath": "staticwebassets\\img\\youtube_icon.png"
+    },
+    {
+      "Id": "D:\\Visual Studio\\ASP.Net\\Automarket\\Automarket\\wwwroot\\js\\admin.js",
+      "PackagePath": "staticwebassets\\js\\admin.js"
     },
     {
       "Id": "D:\\Visual Studio\\ASP.Net\\Automarket\\Automarket\\wwwroot\\js\\cards.js",

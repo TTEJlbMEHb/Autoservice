@@ -152,7 +152,7 @@ namespace Automarket.Service.Implementations
             }
         }
 
-        public async Task<BaseResponse<User>> GetProfile(long id)
+        public async Task<BaseResponse<AccountViewModel>> GetProfile(long id)
         {
             try
             {
@@ -160,24 +160,58 @@ namespace Automarket.Service.Implementations
 
                 if (profile == null)
                 {
-                    return new BaseResponse<User>()
+                    return new BaseResponse<AccountViewModel>()
                     {
                         Description = "Not found",
-                        StatusCode = StatusCode.ObjectNotFound
+                        StatusCode = StatusCode.NotFound
                     };
                 }
 
-                return new BaseResponse<User>()
+                var data = new AccountViewModel()
                 {
-                    Data = profile,
+                    Id = profile.Id,
+                    Email = profile.Email,
+                    Password = profile.Password,
+                    Username = profile.Username,
+                    Name = profile.Name,
+                    Lastname = profile.Lastname,
+                    Age = profile.Age,
+                    Role = profile.Role,
+                };
+
+                return new BaseResponse<AccountViewModel>()
+                {
+                    Data = data,
                     StatusCode = StatusCode.OK
                 };
             }
             catch (Exception ex)
             {
-                return new BaseResponse<User>()
+                return new BaseResponse<AccountViewModel>()
                 {
                     Description = $"[GetProfile] : {ex.Message}",
+                    StatusCode = StatusCode.InternalServerError
+                };
+            }
+        }
+
+        public async Task<IBaseResponse<List<User>>> GetUsers()
+        {
+            try
+            {
+                var users = await _userRepository.GetAll().ToListAsync();
+
+                return new BaseResponse<List<User>>()
+                {
+                    Data = users,
+                    StatusCode = StatusCode.OK
+                };
+            }
+            catch (Exception ex)
+            {
+                return new BaseResponse<List<User>>()
+                {
+                    Description = $"[GetUsers] : {ex.Message}",
                     StatusCode = StatusCode.InternalServerError
                 };
             }
@@ -194,7 +228,7 @@ namespace Automarket.Service.Implementations
                     return new BaseResponse<long>()
                     {
                         Description = "Not found",
-                        StatusCode = StatusCode.ObjectNotFound
+                        StatusCode = StatusCode.NotFound
                     };
                 }
 
@@ -215,22 +249,36 @@ namespace Automarket.Service.Implementations
             }
         }
 
-        public async Task<BaseResponse<User>> Save(User model)
+        public async Task<BaseResponse<User>> CreateAccount(AccountViewModel model)
         {
             try
             {
-                var profile = await _userRepository.GetAll()
-                    .FirstOrDefaultAsync(x => x.Id == model.Id);
+                var user = await _userRepository.GetAll().FirstOrDefaultAsync(x => x.Email == model.Email);
+                if (user != null)
+                {
+                    return new BaseResponse<User>
+                    {
+                        Description = "User is already exist",
+                    };
+                }
 
-                profile.Username = model.Username;
-                profile.Role = model.Role;
+                var newUser = new User()
+                {
+                    Email = model.Email,
+                    Password = HashPasswordHelper.HashPassword(model.Password),
+                    Username = model.Username,
+                    Name = model.Name,
+                    Lastname = model.Lastname,
+                    Age = model.Age,
+                    Role = model.Role,
+                };
 
-                await _userRepository.Update(profile);
+                await _userRepository.Create(newUser);
 
                 return new BaseResponse<User>()
                 {
-                    Data = profile,
-                    Description = "Profile updated",
+                    Data = newUser,
+                    Description = "Profile created",
                     StatusCode = StatusCode.OK
                 };
             }
@@ -239,6 +287,81 @@ namespace Automarket.Service.Implementations
                 return new BaseResponse<User>()
                 {
                     Description = $"[GetProfile] : {ex.Message}",
+                    StatusCode = StatusCode.InternalServerError
+                };
+            }
+        }
+
+        public async Task<BaseResponse<User>> EditAccount(long id, AccountViewModel model)
+        {
+            try
+            {
+                var user = await _userRepository.GetAll().FirstOrDefaultAsync(x => x.Id == id);
+
+                if (user == null)
+                {
+                    return new BaseResponse<User>()
+                    {
+                        Description = "User not found",
+                        StatusCode = StatusCode.NotFound
+                    };
+                }
+
+                user.Email = model.Email;
+                user.Username = model.Username;
+                user.Name = model.Name;
+                user.Lastname = model.Lastname;
+                user.Age = model.Age;
+                user.Role = model.Role;
+
+                await _userRepository.Update(user);
+
+                return new BaseResponse<User>()
+                {
+                    Data = user,
+                    Description = "Profile updated",
+                    StatusCode = StatusCode.OK,
+                };
+            }
+            catch (Exception ex)
+            {
+                return new BaseResponse<User>()
+                {
+                    Description = $"[Edit] : {ex.Message}",
+                    StatusCode = StatusCode.InternalServerError
+                };
+            }
+        }
+
+        public async Task<BaseResponse<bool>> DeleteAccount(long id)
+        {
+            try
+            {
+                var user = await _userRepository.GetAll().FirstOrDefaultAsync(x => x.Id == id);
+
+                if (user == null)
+                {
+                    return new BaseResponse<bool>()
+                    {
+                        Description = "User not found",
+                        StatusCode = StatusCode.NotFound
+                    };
+                }
+
+                await _userRepository.Delete(user);
+
+                return new BaseResponse<bool>()
+                {
+                    Data = true,
+                    Description = "User deleted",
+                    StatusCode = StatusCode.OK
+                };
+            }
+            catch (Exception ex)
+            {
+                return new BaseResponse<bool>()
+                {
+                    Description = $"[DeleteAccount] : {ex.Message}",
                     StatusCode = StatusCode.InternalServerError
                 };
             }

@@ -3,6 +3,7 @@
 
 @{
     ViewData["Title"] = "Home Page";
+    bool admin = User.IsInRole("Administrator") || User.IsInRole("Admin");
 }
 
 <body>
@@ -13,9 +14,9 @@
                     <span class="upper_mainpage_text">AutoService</span><br />
                     <span class="middle_mainpage_text yellow_text">DREAM CARS</span><br />
                 </div>
-                <a class="readmore_button" href="">
+                <a class="readmore_button" asp-controller="Home" asp-action="About">
                     <span class="readmore_text">Read More</span>
-                </a>
+                </a>               
             </div>
             <div class="main_layout"></div>
             <div class="body_color"></div>

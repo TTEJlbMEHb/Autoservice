@@ -1,8 +1,14 @@
 ﻿@using Automarket.Domain.Entity;
-@model User;
+@using Automarket.Domain.ViewModels.Account;
+@model AccountViewModel
 
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
 <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
 <link rel="stylesheet" href="~/css/profile.css" asp-append-version="true" />
+<link rel="stylesheet" href="~/css/card.css" asp-append-version="true" />
+<link rel="stylesheet" href="~/css/admin.css" asp-append-version="true" />
+<link rel="stylesheet" href="~/css/save.css" asp-append-version="true" />
+<link rel="stylesheet" href="~/css/layout.css" asp-append-version="true" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&family=Poppins&display=swap" rel="stylesheet">
@@ -12,6 +18,7 @@
 @{
     Layout = null;
     <title>Profile - Automarket</title>
+    bool admin = User.IsInRole("Administrator") || User.IsInRole("Admin");
 }
 
 <body>
@@ -50,6 +57,26 @@
                     </a>
                 </div>
                 <h3 class="user_title">User information</h3>
+                
+                @if (admin)
+                {
+                    <a class="delete_items delete_account" data-account-id="@Model.Id">Delete</a>
+                    <section>
+                        <div id="modal_delete_@Model.Id" class="modal">
+                            <div class="modal-content">
+                                <button class="close" data-account-id="@Model.Id">&times;</button>
+                                <span class="confirmation_title">Are you sure?</span>
+                                <div class="confirmation_buttons">
+                                    <a class="confirmSave" id="confirmSave_@Model.Id" asp-controller="Admin"
+                                       asp-action="DeleteAccount" asp-route-id="@Model.Id">Confirm</a>
+                                    <button class="confirmCancel" data-account-id="@Model.Id">Cancel</button>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                }
+
+
                 <div class="user_information">
                     <form>
                         <div class="input_column">
