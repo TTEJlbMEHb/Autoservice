@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "NRbrZyWk7ywFK7V4jATx1lxq/62XXlWJk8iO+RIyAMQ=",
+  "Hash": "zYzkytIgtbFeikLe+iV679x/Qvc2taP6Aplfp+QWe6Q=",
   "Source": "Automarket",
   "BasePath": "_content/Automarket",
   "Mode": "Default",
@@ -1426,6 +1426,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\cards.js"
+    },
+    {
+      "Identity": "D:\\Visual Studio\\ASP.Net\\Automarket\\Automarket\\wwwroot\\js\\layout.js",
+      "SourceId": "Automarket",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Visual Studio\\ASP.Net\\Automarket\\Automarket\\wwwroot\\",
+      "BasePath": "_content/Automarket",
+      "RelativePath": "js/layout.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\layout.js"
     },
     {
       "Identity": "D:\\Visual Studio\\ASP.Net\\Automarket\\Automarket\\wwwroot\\js\\profile.js",

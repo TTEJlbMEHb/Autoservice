@@ -44,7 +44,29 @@ namespace Automarket.DAL
                         Password = HashPasswordHelper.HashPassword("admindima"),
                         Age = 19,
                         Role = Role.Administrator
-                    }
+                    },
+                    new User()
+                    {
+                        Id = 3,
+                        Username = "mechanic",
+                        Email = "secauto.mechanic@gmail.com",
+                        Name = "Andriy",
+                        Lastname = "Ishchuk",
+                        Password = HashPasswordHelper.HashPassword("mechanicandriy"),
+                        Age = 19,
+                        Role = Role.Mechanic
+                    },
+                    new User()
+                    {
+                        Id = 4,
+                        Username = "TestUser",
+                        Email = "secauto.testuser@gmail.com",
+                        Name = "Test",
+                        Lastname = "User",
+                        Password = HashPasswordHelper.HashPassword("testuser"),
+                        Age = 19,
+                        Role = Role.User
+                    },
                 });
             });
         }

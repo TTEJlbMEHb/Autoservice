@@ -6,21 +6,50 @@
     ViewData["Title"] = "Admin Panel";
 }
 
+@functions {
+    string GetRoleClass(Role role)
+    {
+        switch (role)
+        {
+            case Role.Admin:
+                return "admin_role";
+            case Role.Administrator:
+                return "administrator_role";
+            case Role.Mechanic:
+                return "mechanic_role";
+            case Role.User:
+                return "user_role";
+            default:
+                return "";
+        }
+    }
+}
+
+
 <main>
     <div class="consumables_container">
-        <div class="admin_items_container">
+        <div class="adminpanel_container">
             <h2 class="consumables_title">SecAuto Admin Panel</h2>
-            <a asp-controller="Admin" asp-action="CreateAccount" class="add_item_admin">Add New</a>
-        </div>          
+            <a asp-controller="Admin" asp-action="CreateAccount" class="add_item_admin add_account">Add New</a>
+
+            <section>
+                <div class="header_search_form search_account_form">
+                    <form class="search_form" onsubmit="event.preventDefault(); searchUsers();">
+                        <input class="search_input search_account" id="emailSearch" type="text" placeholder="Search...">
+                        <button class="search_button" type="submit">Find</button>
+                    </form>
+                </div>
+            </section>
+        </div>
 
         <table class="users_table">
             <thead>
                 <tr class="user_info_titles">
-                    <th class="user_info">@Role.Admin</th>
-                    <th class="user_info">@Role.Administrator</th>
-                    <th class="user_info">@Role.Mechanic</th>
-                    <th class="user_info">@Role.User</th>
-                    <th class="user_info">Total users</th>
+                    <th class="user_info user_info_header" id="adminHeader">@Role.Admin</th>
+                    <th class="user_info user_info_header" id="administratorHeader">@Role.Administrator</th>
+                    <th class="user_info user_info_header" id="mechanicHeader">@Role.Mechanic</th>
+                    <th class="user_info user_info_header" id="userHeader">@Role.User</th>
+                    <th class="user_info user_info_header" id="allUsersHeader">Total users</th>
                 </tr>
             </thead>
             <tbody>
@@ -34,7 +63,7 @@
             </tbody>
         </table>
 
-        <table class="users_table">
+        <table class="users_table" id="usersTable">
             <thead>
                 <tr class="user_info_titles">
                     <th class="user_info">ID</th>
@@ -45,28 +74,28 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach (var user in Model)
+                @foreach (var userRole in Model.OrderBy(user => user.Role))
                 {
-                    <tr class="users_info_tr">
-                        <td class="user_info">@user.Id</td>
-                        <td class="user_info">@user.Email</td>
-                        <td class="user_info">@user.Role</td>
+                    <tr class="users_info_tr @GetRoleClass(userRole.Role)">
+                        <td class="user_info">@userRole.Id</td>
+                        <td class="user_info">@userRole.Email</td>
+                        <td class="user_info">@userRole.Role</td>
                         <td>
-                            <a class="edit_items admin_panel_buttons" asp-controller="Account" asp-action="Profile" asp-route-id="@user.Id">
+                            <a class="edit_items admin_panel_buttons" asp-controller="Account" asp-action="Profile" asp-route-id="@userRole.Id">
                                 <span>Profile</span>
                             </a>
                         </td>
                         <td>
-                            <a class="delete_items admin_panel_buttons" data-account-id="@user.Id">
+                            <a class="delete_items admin_panel_buttons" data-account-id="@userRole.Id">
                                 <span>Delete</span>
                             </a>
-                            <div id="modal_delete_@user.Id" class="modal">
+                            <div id="modal_delete_@userRole.Id" class="modal">
                                 <div class="modal-content">
-                                    <button class="close" data-account-id="@user.Id">&times;</button>
+                                    <button class="close" data-account-id="@userRole.Id">&times;</button>
                                     <span class="confirmation_title">Are you sure?</span>
                                     <div class="confirmation_buttons">
-                                        <a class="confirmSave" id="confirmSave_@user.Id" asp-controller="Admin" asp-action="DeleteAccount" asp-route-id="@user.Id">Confirm</a>
-                                        <button class="confirmCancel" data-account-id="@user.Id">Cancel</button>
+                                        <a class="confirmSave" id="confirmSave_@userRole.Id" asp-controller="Admin" asp-action="DeleteAccount" asp-route-id="@userRole.Id">Confirm</a>
+                                        <button class="confirmCancel" data-account-id="@userRole.Id">Cancel</button>
                                     </div>
                                 </div>
                             </div>

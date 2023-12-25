@@ -52,35 +52,18 @@
 
 
 document.addEventListener("DOMContentLoaded", function () {
-    const openShareButton = document.getElementById("openShare");
-    const modal = document.getElementById("myModal");
-    const closeModalButton = document.getElementById("closeModalButton");
-    const invitationLink = document.getElementById("invitationLink");
-    const copyLinkButton = document.getElementById("copyLinkButton");
+    const getElement = (id) => document.getElementById(id);
+    const modal = getElement("myModal");
+    const invitationLink = getElement("invitationLink");
+    const copyLinkButton = getElement("copyLinkButton");
+    const userId = window.location.pathname.split("/").pop();
+    const link = window.location.origin + "/Account/Profile/" + userId;
     const socialMediaIcons = document.querySelectorAll(".socialmedia_icon");
-    const link = window.location.origin + "/Home/Index";
-    const customAlert = document.getElementById("customAlert");
-    const alertText = document.getElementById("alertText");
+    const copyAlert = getElement("copyAlert");
 
-    openShareButton.addEventListener("click", () => {
-        modal.style.display = "block";
-        invitationLink.value = window.location.origin + "/Home/Index";
-    });
-
-    closeModalButton.addEventListener("click", () => {
-        modal.style.display = "none";
-    });
-
-    copyLinkButton.addEventListener("click", () => {
-        const link = window.location.origin + "/Home/Index";
-        invitationLink.value = link;
-        invitationLink.select();
-        document.execCommand("copy");
-
-        const copyAlert = document.getElementById("copyAlert");
+    const showCopyAlert = () => {
         copyAlert.style.display = "block";
-
-        const closeCopyAlert = document.getElementById("closeCopyAlert");
+        const closeCopyAlert = getElement("closeCopyAlert");
         closeCopyAlert.addEventListener("click", () => {
             copyAlert.style.animation = "fadeOut 0.4s ease-in-out both";
             setTimeout(() => {
@@ -96,47 +79,57 @@ document.addEventListener("DOMContentLoaded", function () {
                 copyAlert.style.animation = "";
             }, 400);
         }, 3000);
+    };
+
+    const handleModal = (action) => {
+        modal.style.display = action;
+    };
+
+    const handleCopyLink = () => {
+        invitationLink.value = link;
+        invitationLink.select();
+        document.execCommand("copy");
+        showCopyAlert();
+    };
+
+    const openShareButton = getElement("openShare");
+    const closeModalButton = getElement("closeModalButton");
+
+    openShareButton.addEventListener("click", () => {
+        handleModal("block");
+        invitationLink.value = link;
     });
 
+    closeModalButton.addEventListener("click", () => handleModal("none"));
+
+    copyLinkButton.addEventListener("click", handleCopyLink);
 
     window.addEventListener("click", (event) => {
         if (event.target === modal) {
-            modal.style.display = "none";
+            handleModal("none");
         }
     });
 
     socialMediaIcons.forEach((icon) => {
         icon.addEventListener("click", () => {
             const socialMedia = icon.getAttribute("get_socialmedia");
-            let socialMediaUrl = "";
+            const socialMediaUrlMap = {
+                telegram: `https://t.me/share/url?url=${link}`,
+                instagram: `https://www.instagram.com/?url=${link}`,
+                twitter: `https://twitter.com/intent/tweet?url=${link}`,
+                facebook: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(link)}`,
+                viber: `viber://forward?text=${encodeURIComponent(link)}`,
+                whatsapp: `https://wa.me/?text='${encodeURIComponent(link)}`
+            };
 
-            switch (socialMedia) {
-                case "telegram":
-                    socialMediaUrl = `https://t.me/share/url?url=${link}`;
-                    break;
-                case "instagram":
-                    socialMediaUrl = `https://www.instagram.com/?url=${link}`;
-                    break;
-                case "twitter":
-                    socialMediaUrl = `https://twitter.com/intent/tweet?url=${link}`;
-                    break;
-                case "facebook":
-                    socialMediaUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent({ link })}`;
-                    break;
-                case "viber":
-                    socialMediaUrl = `viber://forward?text=${encodeURIComponent(link)}`;
-                    break;
-                case "whatsapp":
-                    socialMediaUrl = `https://wa.me/?text='${encodeURIComponent(link)}`;
-                    break;
-            }
-
+            const socialMediaUrl = socialMediaUrlMap[socialMedia];
             if (socialMediaUrl) {
                 window.open(socialMediaUrl, "blank");
             }
         });
     });
 });
+
 
 
 document.addEventListener('DOMContentLoaded', function () {

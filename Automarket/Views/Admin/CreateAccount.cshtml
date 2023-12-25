@@ -21,13 +21,6 @@
 
 <body>
     <main>
-        <div class="copy_alert" id="copyAlert">
-            <div>
-                <span class="copy_alert_text">The link copied to clipboard</span>
-                <span id="closeCopyAlert" class="close_copy">&times;</span>
-            </div>
-        </div>
-
         <div class="profile_bg"></div>
         <div class="white_bg"></div>
         <div class="profile_header">
@@ -54,7 +47,7 @@
                     }                   
                 </div>
                 <h3 class="user_title">User information</h3>
-                <div class="user_information adminpanel_container">
+                <div class="create_user_information">
                     <form asp-controller="Admin" asp-action="CreateAccount" method="post">
                         <div class="input_column">
                             <div>

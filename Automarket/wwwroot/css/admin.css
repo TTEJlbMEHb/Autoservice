@@ -28,13 +28,17 @@
     margin: 0 auto;
 }
 
+.user_info_header {
+    cursor: pointer;
+}
+
 .admin_panel_buttons {
     padding: 7px 15px;
 }
 
 .adminpanel_username {
     position: absolute;
-    top: 105px;
+    top: 95px;
     right: 520px;
 }
 
@@ -52,3 +56,47 @@
     margin-bottom: 50px;
 }
 
+.admin_role {
+    background-color: #ffcccb;
+}
+
+.administrator_role {
+    background-color: #c1e1c5;
+}
+
+.mechanic_role {
+    background-color: #cfe2f3;
+}
+
+.user_role {
+    background-color: #f7ebbe;
+}
+
+.add_account {
+    margin-left: 200px;
+}
+
+.search_account_form {
+    margin-top: -15px;
+}
+
+.search_account {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.adminpanel_container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 100px;
+}
+
+.create_user_information {
+    margin: 30px 70px;
+}
+
+.accountedit_validation {
+    position: absolute;
+    top: 160px;
+    right: 845px;
+}

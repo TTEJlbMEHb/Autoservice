@@ -34,6 +34,11 @@
                 <div class="car_consumables">
                     @if (Model != null && Model.Any())
                     {
+                        <section id="noItemsFound" class="no_items" style="display:none;">
+                            <span class="no_items_text">No items found!</span>
+                            <span class="no_items_description">Try a different search term</span>
+                        </section>
+
                         @foreach (var car in Model)
                         {
                             <section>
