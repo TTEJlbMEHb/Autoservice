@@ -47,10 +47,18 @@ namespace Automarket.Controllers
             string userEmail = userEmailHelper.GetUserUserEmail();
 
             var response = await _accountService.GetIdByEmail(userEmail);
-            ViewBag.UserId = response;
 
-            return View();
-        }
+            if (response.StatusCode == Domain.Enum.StatusCode.OK)
+            {
+                ViewBag.UserId = response;
+                return View();
+            }
+            else if (response.StatusCode == Domain.Enum.StatusCode.InternalServerError)
+            {
+                return RedirectToAction("InternalServerError", "Errors");
+            }
+            return RedirectToAction("Error", "Errors");
+        }      
 
         public IActionResult Privacy()
         {

@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="~/css/card.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/save.css" asp-append-version="true" />  
     <link rel="stylesheet" href="~/css/admin.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/service.css" asp-append-version="true" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&family=Poppins&display=swap" rel="stylesheet">
@@ -109,7 +110,7 @@
 
     @RenderBody()
 
-    <footer class="footerr">
+    <footer class="footer">
         <div class="footer_container">
             <div class="logo_footer">
                 <div class="logo">
@@ -121,9 +122,16 @@
             <div class="separator "></div>
             <div class="first_column_footer">
                 <ul class="first_ul_footer">
-                    <li class="footer_li"><a asp-controller="Home" asp-action="About" 
-                        class="white_text"><span class="footer_text">About</span></a></li>
-                    <li class="footer_li"><a href="" class="white_text"><span class="footer_text">Products</span></a></li>
+                    <li class="footer_li">
+                        <a class="white_text" asp-controller="Home" asp-action="About">
+                            <span class="footer_text">About</span>
+                        </a>
+                    </li>
+                    <li class="footer_li">
+                        <a class="white_text">
+                            <span class="footer_text">Products</span>
+                        </a>
+                    </li>
                     <li class="footer_li"><a href="" class="white_text"><span class="footer_text">Support</span></a></li>
                 </ul>
                 <div class="copyrights"><span class="white_text">© 2023 Secular Coop.</span></div>

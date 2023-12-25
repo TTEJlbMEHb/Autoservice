@@ -868,6 +868,11 @@ label {
     color: black;
 }
 
+.about_path {
+    margin-left: 70px;
+    margin-top: 90px;
+}
+
 .about_container {
     display: flex;
     justify-content: center;
@@ -875,12 +880,13 @@ label {
 }
 
 .about_text_container {
-    padding-top: 50px;
+    margin-top: 70px;
 }
 
 .about_img {
     width: 450px;
     height: 550px;
+    margin-top: 21.5px;
 }
 
 .about_title {
@@ -986,19 +992,23 @@ label {
     font-weight: 700;
     letter-spacing: 2px;
     color: black;
-    margin: 260px auto;
+    margin: 200px auto;
 }
 
 .contacts_vertical_stripe {
-    width: 100vh;
-    height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 90vh;
+    height: 500px;
     background-color: #222;
+    margin-top: 25px;
 }
 
 .contacts_info {
     display: flex;
     flex-direction: column;
-    margin-top: 100px;
+    margin-top: 50px;
     margin-left: 100px;
 }
 
@@ -1025,9 +1035,9 @@ label {
 
 .contacts_bg {
     position: absolute;
-    left: 8%;
+    left: 12%;
     top: 59%;
-    width: 650px;
-    height: 650px;
+    width: 550px;
+    height: 550px;
     opacity: 0.025;
 }

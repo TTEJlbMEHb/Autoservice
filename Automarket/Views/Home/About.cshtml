@@ -3,14 +3,20 @@
 }
 
 <section>
-    <div class="about_container">
+    <section>
+        <div class="pages_path services_path">
+            <a class="home_icon" asp-controller="Home" asp-action="Index"></a>
+            <a class="path_current_page inactive">@ViewData["Title"]</a>
+        </div>
+    </section>
+    <div class="about_container">        
         <div>           
             <div class="about_text_container">
                 <span class="about_title">ABOUT US</span>
                 <div class="logo about_text">
-                    <a asp-controller="Home" asp-action="Index" class="logo_link">
+                    <div class="logo_link">
                         <span class="black_text">Sec</span><span class="yellow_text">Auto</span>
-                    </a>
+                    </div>
                 </div>
                 <div class="about_description_container">
                     <span class="about_description">
@@ -20,7 +26,7 @@
                     </span>
                 </div>
             </div>
-            </div>
+        </div>
         <img class="about_img" src="~/img/about_bg.jpeg" alt="About" />
     </div>
 </section>

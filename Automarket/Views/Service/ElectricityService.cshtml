@@ -1,0 +1,97 @@
+﻿@using Automarket.Domain.Enum;
+@using Automarket.Domain.Extensions
+
+@{
+    ViewData["Title"] = @ServiceType.Electricity_Service.GetDisplayName();
+}
+
+<section>
+    <section>
+        <div class="pages_path services_path">
+            <a class="home_icon" asp-controller="Home" asp-action="Index"></a>
+            <a class="path_current_page" asp-controller="Service" asp-action="Services">Services</a>
+            <a class="path_current_page inactive">@ViewData["Title"]</a>
+        </div>
+    </section>
+    <div class="service_container">
+        <div class="service_column">
+            <div>
+                <h2 class="service_title">
+                    @ViewData["Title"]
+                </h2>
+            </div>
+            <div>
+                <div class="services_ul">
+                    <ul>
+                        <li class="service_li">Solving problems with auto electricity</li>
+                        <li class="service_li">Searching for short circuits and breaks</li>
+                        <li class="service_li">Restoration of the on-board electrical network</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div>
+            <img class="service_img_bigg" src="~/img/electricity_service.png" alt="Electricity service" />
+        </div>
+    </div>
+
+</section>
+
+<section class="service_conditions margin_bottom">
+    <div class="work_conditions">
+        <div class="first_column_conditions">
+            <span class="upper_conditions_text">How does we work?</span>
+            <span class="middle_conditions_text">Just a few easy steps to get a result</span>
+            <img class="conditions_img" src="~/img/autoservices2.jpg" alt="Conditions" />
+            <span class="lower_conditions_text">Make an appointment, don't waste your time</span>
+            <button id="showModalButton" class="activate_button">Apply for</button>
+
+            <div class="modal" id="modal">
+                <div class="modal_form">
+                    <button class="close_button" id="closeButton">&times;</button>
+                    <h2 class="form_title">Fill out the form for services</h2>
+                    <form id="modal_form" method="post" action="YourAspNetPage.aspx">
+                        <div class="input_container">
+                            <label for="name">Input your name:</label>
+                            <input type="text" id="name" name="name" runat="server" placeholder="Name" />
+                        </div>
+                        <div class="input_container">
+                            <label for="phone_number">Input your phone number:</label>
+                            <input type="tel" id="inputPhone" name="phone_number" runat="server" value="+38(___)___-__-__" />
+                        </div>
+                        <div class="input_container">
+                            <label for="date">Input your date:</label>
+                            <input type="date" id="date" name="date" runat="server" />
+                        </div>
+                        <button class="submit_form" type="submit" runat="server" Text="Submit">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="second_column_conditions">
+            <div class="conditions_bg">
+                <ul class="conditions_ul">
+                    <li>
+                        <h3 class="condition_title">1. Request</h3>
+                        <p class="condition_description">Leave us a request by phone or on the website</p>
+                    </li>
+                    <li>
+                        <h3 class="condition_title">2. Entry</h3>
+                        <p class="condition_description">The manager will contact you, provide advice and decide on the date and time</p>
+                    </li>
+                    <li>
+                        <h3 class="condition_title">3. Services</h3>
+                        <p class="condition_description">Carrying out diagnostics</p>
+                    </li>
+                    <li>
+                        <h3 class="condition_title">4. Verification and payment</h3>
+                        <p class="condition_description">The master notifies about the completed work, you check and pay for the services</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>

@@ -154,11 +154,6 @@
     text-decoration: none;
 }
 
-@font-face {
-    font-family: 'Typemates';
-    src: url('typemates - cera round pro bold.otf') format('opentype');
-}
-
 .item_name, .item_name:hover {
     margin-top: 15px;
     text-decoration: none;

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "zYzkytIgtbFeikLe+iV679x/Qvc2taP6Aplfp+QWe6Q=",
+  "Hash": "OjhRY0jOONHh44UPS0h+s4X1EgcQZeNV4bKWGCJXZ/M=",
   "Source": "Automarket",
   "BasePath": "_content/Automarket",
   "Mode": "Default",
@@ -134,6 +134,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\save.css"
+    },
+    {
+      "Identity": "D:\\Visual Studio\\ASP.Net\\Automarket\\Automarket\\wwwroot\\css\\service.css",
+      "SourceId": "Automarket",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Visual Studio\\ASP.Net\\Automarket\\Automarket\\wwwroot\\",
+      "BasePath": "_content/Automarket",
+      "RelativePath": "css/service.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\service.css"
     },
     {
       "Identity": "D:\\Visual Studio\\ASP.Net\\Automarket\\Automarket\\wwwroot\\css\\site.css",
@@ -476,6 +493,23 @@
       "OriginalItemSpec": "wwwroot\\img\\car_details1.jpg"
     },
     {
+      "Identity": "D:\\Visual Studio\\ASP.Net\\Automarket\\Automarket\\wwwroot\\img\\carshop_service.png",
+      "SourceId": "Automarket",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Visual Studio\\ASP.Net\\Automarket\\Automarket\\wwwroot\\",
+      "BasePath": "_content/Automarket",
+      "RelativePath": "img/carshop_service.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\carshop_service.png"
+    },
+    {
       "Identity": "D:\\Visual Studio\\ASP.Net\\Automarket\\Automarket\\wwwroot\\img\\cart_icon.png",
       "SourceId": "Automarket",
       "SourceType": "Discovered",
@@ -527,6 +561,23 @@
       "OriginalItemSpec": "wwwroot\\img\\cashless_icon.png"
     },
     {
+      "Identity": "D:\\Visual Studio\\ASP.Net\\Automarket\\Automarket\\wwwroot\\img\\chassis_service.png",
+      "SourceId": "Automarket",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Visual Studio\\ASP.Net\\Automarket\\Automarket\\wwwroot\\",
+      "BasePath": "_content/Automarket",
+      "RelativePath": "img/chassis_service.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\chassis_service.png"
+    },
+    {
       "Identity": "D:\\Visual Studio\\ASP.Net\\Automarket\\Automarket\\wwwroot\\img\\circle_icon.png",
       "SourceId": "Automarket",
       "SourceType": "Discovered",
@@ -544,6 +595,40 @@
       "OriginalItemSpec": "wwwroot\\img\\circle_icon.png"
     },
     {
+      "Identity": "D:\\Visual Studio\\ASP.Net\\Automarket\\Automarket\\wwwroot\\img\\clutch_service.png",
+      "SourceId": "Automarket",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Visual Studio\\ASP.Net\\Automarket\\Automarket\\wwwroot\\",
+      "BasePath": "_content/Automarket",
+      "RelativePath": "img/clutch_service.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\clutch_service.png"
+    },
+    {
+      "Identity": "D:\\Visual Studio\\ASP.Net\\Automarket\\Automarket\\wwwroot\\img\\computerdiagnostics_service.png",
+      "SourceId": "Automarket",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Visual Studio\\ASP.Net\\Automarket\\Automarket\\wwwroot\\",
+      "BasePath": "_content/Automarket",
+      "RelativePath": "img/computerdiagnostics_service.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\computerdiagnostics_service.png"
+    },
+    {
       "Identity": "D:\\Visual Studio\\ASP.Net\\Automarket\\Automarket\\wwwroot\\img\\copy_icon.png",
       "SourceId": "Automarket",
       "SourceType": "Discovered",
@@ -559,6 +644,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\copy_icon.png"
+    },
+    {
+      "Identity": "D:\\Visual Studio\\ASP.Net\\Automarket\\Automarket\\wwwroot\\img\\electricity_service.png",
+      "SourceId": "Automarket",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Visual Studio\\ASP.Net\\Automarket\\Automarket\\wwwroot\\",
+      "BasePath": "_content/Automarket",
+      "RelativePath": "img/electricity_service.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\electricity_service.png"
     },
     {
       "Identity": "D:\\Visual Studio\\ASP.Net\\Automarket\\Automarket\\wwwroot\\img\\engine_icon.png",
@@ -593,6 +695,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\engine_icon1.png"
+    },
+    {
+      "Identity": "D:\\Visual Studio\\ASP.Net\\Automarket\\Automarket\\wwwroot\\img\\engine_service.png",
+      "SourceId": "Automarket",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Visual Studio\\ASP.Net\\Automarket\\Automarket\\wwwroot\\",
+      "BasePath": "_content/Automarket",
+      "RelativePath": "img/engine_service.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\engine_service.png"
     },
     {
       "Identity": "D:\\Visual Studio\\ASP.Net\\Automarket\\Automarket\\wwwroot\\img\\facebook_icon1.png",
@@ -1156,6 +1275,23 @@
       "OriginalItemSpec": "wwwroot\\img\\signup_car.png"
     },
     {
+      "Identity": "D:\\Visual Studio\\ASP.Net\\Automarket\\Automarket\\wwwroot\\img\\steeringrack_service.png",
+      "SourceId": "Automarket",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Visual Studio\\ASP.Net\\Automarket\\Automarket\\wwwroot\\",
+      "BasePath": "_content/Automarket",
+      "RelativePath": "img/steeringrack_service.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\steeringrack_service.png"
+    },
+    {
       "Identity": "D:\\Visual Studio\\ASP.Net\\Automarket\\Automarket\\wwwroot\\img\\telegram_icon.png",
       "SourceId": "Automarket",
       "SourceType": "Discovered",
@@ -1188,6 +1324,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\time-outline.svg"
+    },
+    {
+      "Identity": "D:\\Visual Studio\\ASP.Net\\Automarket\\Automarket\\wwwroot\\img\\turbine_service.png",
+      "SourceId": "Automarket",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Visual Studio\\ASP.Net\\Automarket\\Automarket\\wwwroot\\",
+      "BasePath": "_content/Automarket",
+      "RelativePath": "img/turbine_service.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\turbine_service.png"
     },
     {
       "Identity": "D:\\Visual Studio\\ASP.Net\\Automarket\\Automarket\\wwwroot\\img\\twitch_icon.png",
@@ -1324,6 +1477,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\whatsapp_icon.png"
+    },
+    {
+      "Identity": "D:\\Visual Studio\\ASP.Net\\Automarket\\Automarket\\wwwroot\\img\\wheelalignment_service.png",
+      "SourceId": "Automarket",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Visual Studio\\ASP.Net\\Automarket\\Automarket\\wwwroot\\",
+      "BasePath": "_content/Automarket",
+      "RelativePath": "img/wheelalignment_service.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\wheelalignment_service.png"
     },
     {
       "Identity": "D:\\Visual Studio\\ASP.Net\\Automarket\\Automarket\\wwwroot\\img\\white_heart_icon.png",

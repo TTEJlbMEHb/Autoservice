@@ -29,17 +29,21 @@
 
 
 function searchUsers() {
-    var input, filter, table, tr, td, i, txtValue;
+    var input, filter, table, tr, td, i, emailTxt, idTxt;
     input = document.getElementById("emailSearch");
     filter = input.value.toUpperCase();
-    table = document.getElementsByClassName("users_table")[1];
+    table = document.getElementById("usersTable");
     tr = table.getElementsByTagName("tr");
 
     for (i = 0; i < tr.length; i++) {
-        td = tr[i].getElementsByTagName("td")[1];
-        if (td) {
-            txtValue = td.textContent || td.innerText;
-            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        emailTd = tr[i].getElementsByTagName("td")[1];
+        idTd = tr[i].getElementsByTagName("td")[0];
+
+        if (emailTd && idTd) {
+            emailTxt = emailTd.textContent || emailTd.innerText;
+            idTxt = idTd.textContent || idTd.innerText;
+
+            if (emailTxt.toUpperCase().indexOf(filter) > -1 || idTxt === filter) {
                 tr[i].style.display = "";
             } else {
                 tr[i].style.display = "none";
@@ -47,6 +51,7 @@ function searchUsers() {
         }
     }
 }
+
 
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -98,3 +103,29 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 
+
+document.addEventListener('DOMContentLoaded', function () {
+    const usersTab = document.getElementById('usersTab');
+    const servicesTab = document.getElementById('servicesTab');
+    const usersContent = document.getElementById('users_content');
+    const servicesContent = document.getElementById('services_content');
+
+    usersContent.style.display = 'block';
+    servicesContent.style.display = 'none';
+
+    usersTab.addEventListener('click', function () {
+        usersContent.style.display = 'block';
+        servicesContent.style.display = 'none';
+
+        usersTab.classList.add('active-tab');
+        servicesTab.classList.remove('active-tab');
+    });
+
+    servicesTab.addEventListener('click', function () {
+        usersContent.style.display = 'none';
+        servicesContent.style.display = 'block';
+
+        servicesTab.classList.add('active-tab');
+        usersTab.classList.remove('active-tab');
+    });
+});

@@ -29,6 +29,10 @@
       "PackagePath": "staticwebassets\\css\\save.css"
     },
     {
+      "Id": "D:\\Visual Studio\\ASP.Net\\Automarket\\Automarket\\wwwroot\\css\\service.css",
+      "PackagePath": "staticwebassets\\css\\service.css"
+    },
+    {
       "Id": "D:\\Visual Studio\\ASP.Net\\Automarket\\Automarket\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
@@ -105,6 +109,10 @@
       "PackagePath": "staticwebassets\\img\\car_details1.jpg"
     },
     {
+      "Id": "D:\\Visual Studio\\ASP.Net\\Automarket\\Automarket\\wwwroot\\img\\carshop_service.png",
+      "PackagePath": "staticwebassets\\img\\carshop_service.png"
+    },
+    {
       "Id": "D:\\Visual Studio\\ASP.Net\\Automarket\\Automarket\\wwwroot\\img\\cart_icon.png",
       "PackagePath": "staticwebassets\\img\\cart_icon.png"
     },
@@ -117,12 +125,28 @@
       "PackagePath": "staticwebassets\\img\\cashless_icon.png"
     },
     {
+      "Id": "D:\\Visual Studio\\ASP.Net\\Automarket\\Automarket\\wwwroot\\img\\chassis_service.png",
+      "PackagePath": "staticwebassets\\img\\chassis_service.png"
+    },
+    {
       "Id": "D:\\Visual Studio\\ASP.Net\\Automarket\\Automarket\\wwwroot\\img\\circle_icon.png",
       "PackagePath": "staticwebassets\\img\\circle_icon.png"
     },
     {
+      "Id": "D:\\Visual Studio\\ASP.Net\\Automarket\\Automarket\\wwwroot\\img\\clutch_service.png",
+      "PackagePath": "staticwebassets\\img\\clutch_service.png"
+    },
+    {
+      "Id": "D:\\Visual Studio\\ASP.Net\\Automarket\\Automarket\\wwwroot\\img\\computerdiagnostics_service.png",
+      "PackagePath": "staticwebassets\\img\\computerdiagnostics_service.png"
+    },
+    {
       "Id": "D:\\Visual Studio\\ASP.Net\\Automarket\\Automarket\\wwwroot\\img\\copy_icon.png",
       "PackagePath": "staticwebassets\\img\\copy_icon.png"
+    },
+    {
+      "Id": "D:\\Visual Studio\\ASP.Net\\Automarket\\Automarket\\wwwroot\\img\\electricity_service.png",
+      "PackagePath": "staticwebassets\\img\\electricity_service.png"
     },
     {
       "Id": "D:\\Visual Studio\\ASP.Net\\Automarket\\Automarket\\wwwroot\\img\\engine_icon.png",
@@ -131,6 +155,10 @@
     {
       "Id": "D:\\Visual Studio\\ASP.Net\\Automarket\\Automarket\\wwwroot\\img\\engine_icon1.png",
       "PackagePath": "staticwebassets\\img\\engine_icon1.png"
+    },
+    {
+      "Id": "D:\\Visual Studio\\ASP.Net\\Automarket\\Automarket\\wwwroot\\img\\engine_service.png",
+      "PackagePath": "staticwebassets\\img\\engine_service.png"
     },
     {
       "Id": "D:\\Visual Studio\\ASP.Net\\Automarket\\Automarket\\wwwroot\\img\\facebook_icon1.png",
@@ -265,12 +293,20 @@
       "PackagePath": "staticwebassets\\img\\signup_car.png"
     },
     {
+      "Id": "D:\\Visual Studio\\ASP.Net\\Automarket\\Automarket\\wwwroot\\img\\steeringrack_service.png",
+      "PackagePath": "staticwebassets\\img\\steeringrack_service.png"
+    },
+    {
       "Id": "D:\\Visual Studio\\ASP.Net\\Automarket\\Automarket\\wwwroot\\img\\telegram_icon.png",
       "PackagePath": "staticwebassets\\img\\telegram_icon.png"
     },
     {
       "Id": "D:\\Visual Studio\\ASP.Net\\Automarket\\Automarket\\wwwroot\\img\\time-outline.svg",
       "PackagePath": "staticwebassets\\img\\time-outline.svg"
+    },
+    {
+      "Id": "D:\\Visual Studio\\ASP.Net\\Automarket\\Automarket\\wwwroot\\img\\turbine_service.png",
+      "PackagePath": "staticwebassets\\img\\turbine_service.png"
     },
     {
       "Id": "D:\\Visual Studio\\ASP.Net\\Automarket\\Automarket\\wwwroot\\img\\twitch_icon.png",
@@ -303,6 +339,10 @@
     {
       "Id": "D:\\Visual Studio\\ASP.Net\\Automarket\\Automarket\\wwwroot\\img\\whatsapp_icon.png",
       "PackagePath": "staticwebassets\\img\\whatsapp_icon.png"
+    },
+    {
+      "Id": "D:\\Visual Studio\\ASP.Net\\Automarket\\Automarket\\wwwroot\\img\\wheelalignment_service.png",
+      "PackagePath": "staticwebassets\\img\\wheelalignment_service.png"
     },
     {
       "Id": "D:\\Visual Studio\\ASP.Net\\Automarket\\Automarket\\wwwroot\\img\\white_heart_icon.png",
