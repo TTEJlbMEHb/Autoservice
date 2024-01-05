@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using Automarket.Domain.Enum;
+using Automarket.Domain.Helpers;
 
 namespace Automarket.Domain.ViewModels.Account
 {
@@ -23,6 +24,7 @@ namespace Automarket.Domain.ViewModels.Account
         [MaxLength(30, ErrorMessage = "Name must be less than 30")]
         public string? Lastname { get; set; }
 
+        [ValidationHelper(ErrorMessage = "Password is required")]
         [MinLength(6, ErrorMessage = "Password must be greater than 6")]
         [DataType(DataType.Password)]
         public string? Password { get; set; }

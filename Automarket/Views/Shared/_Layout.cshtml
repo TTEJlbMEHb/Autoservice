@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@using System.Text.RegularExpressions;
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -14,6 +15,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&family=Poppins&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="~/js/layout.js" asp-append-version="true"></script>
     <link rel="icon" type="image/x-icon" href="~/img/automarket_1.jpg">
 </head>
 
@@ -25,7 +28,7 @@
     if (ViewData["Title"] == "Consumables")
     {
         searchForm = true;
-    }
+    }  
 }
 
 <body>
@@ -195,8 +198,7 @@
     <script src="~/js/site.js" asp-append-version="true"></script>
     <script src="~/js/cards.js" asp-append-version="true"></script>
     <script src="~/js/save.js" asp-append-version="true"></script>
-    <script src="~/js/admin.js" asp-append-version="true"></script>
-    <script src="~/js/layout.js" asp-append-version="true"></script>
+    <script src="~/js/admin.js" asp-append-version="true"></script>   
 
     @await RenderSectionAsync("Scripts", required: false)
 

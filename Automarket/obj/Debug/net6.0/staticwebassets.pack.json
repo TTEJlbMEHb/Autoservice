@@ -377,10 +377,6 @@
       "PackagePath": "staticwebassets\\js\\profile.js"
     },
     {
-      "Id": "D:\\Visual Studio\\ASP.Net\\Automarket\\Automarket\\wwwroot\\js\\save.js",
-      "PackagePath": "staticwebassets\\js\\save.js"
-    },
-    {
       "Id": "D:\\Visual Studio\\ASP.Net\\Automarket\\Automarket\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },

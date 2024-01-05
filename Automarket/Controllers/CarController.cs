@@ -83,11 +83,12 @@ namespace Automarket.Controllers
 
             if (response.StatusCode == Domain.Enum.StatusCode.OK)
             {
+                TempData["AlertMessage"] = response.Description;
                 return RedirectToAction("GetCars");
             }
             else if (response.StatusCode == Domain.Enum.StatusCode.InternalServerError)
             {
-                return RedirectToAction("InternalServerError", "Errors");
+                TempData["AlertMessage"] = response.Description;
             }
             return RedirectToAction("Error", "Errors");
         }
@@ -103,6 +104,10 @@ namespace Automarket.Controllers
             {
                 return View();
             }
+
+            var userEmailHelper = new GetUserEmailHelper(_httpContextAccessor);
+            string userEmail = userEmailHelper.GetUserUserEmail();
+            ViewBag.UserId = await _accountService.GetIdByEmail(userEmail);
 
             var response = await _carService.GetCar(id);
 
@@ -128,11 +133,31 @@ namespace Automarket.Controllers
             {
                 if (carViewModel.Id == 0)
                 {
-                    await _carService.CreateCar(carViewModel);
+                    var response = await _carService.CreateCar(carViewModel);
+
+                    if (response.StatusCode == Domain.Enum.StatusCode.OK)
+                    {
+                        TempData["AlertMessage"] = response.Description;
+                    }
+                    else if (response.StatusCode == Domain.Enum.StatusCode.InternalServerError)
+                    {
+                        return RedirectToAction("InternalServerError", "Errors");
+                    }
+                    return RedirectToAction("Error", "Errors");
                 }
                 else
                 {
-                    await _carService.Edit(carViewModel.Id, carViewModel);
+                    var response = await _carService.Edit(carViewModel.Id, carViewModel);
+
+                    if (response.StatusCode == Domain.Enum.StatusCode.OK)
+                    {
+                        TempData["AlertMessage"] = response.Description;
+                    }
+                    else if (response.StatusCode == Domain.Enum.StatusCode.InternalServerError)
+                    {
+                        return RedirectToAction("InternalServerError", "Errors");
+                    }
+                    return RedirectToAction("Error", "Errors");
                 }
             }
             return RedirectToAction("GetCars");

@@ -24,3 +24,44 @@
 
     noItemsFound.style.display = nothingFound ? "block" : "none";
 }
+
+
+var deleteAlert = document.getElementById('ActionAlert');
+document.addEventListener('DOMContentLoaded', function () { 
+
+    if (deleteAlert) {
+        setTimeout(function () {
+            closeAlert();
+        }, 3000);
+
+        deleteAlert.classList.add('show');
+    }
+});
+
+function closeAlert() {
+    if (deleteAlert) {
+        deleteAlert.style.display = 'none';
+    }
+}
+
+
+
+function showSuccessAlert(message) {
+    Swal.fire({
+        icon: "success",
+        title: "SUCCESS",
+        text: message,
+        showConfirmButton: false,
+        timer: 1500
+    });
+}
+
+function showErrorAlert(message) {
+    Swal.fire({
+        icon: "error",
+        title: "ERROR",
+        text: message,
+        showConfirmButton: false,
+        timer: 1500
+    });
+}

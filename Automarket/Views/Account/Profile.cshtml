@@ -1,5 +1,7 @@
 ﻿@using Automarket.Domain.Entity;
+@using Automarket.Domain.Enum;
 @using Automarket.Domain.ViewModels.Account;
+@using System.Text.RegularExpressions;
 @model AccountViewModel
 
 <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
@@ -13,12 +15,43 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&family=Poppins&display=swap" rel="stylesheet">
 <link rel="icon" type="image/x-icon" href="~/img/automarket_1.jpg">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="~/js/layout.js" asp-append-version="true"></script>
 <script src="/js/profile.js" asp-append-version="true"></script>
 
 @{
-    Layout = null;
-    <title>Profile - Automarket</title>
+    Layout = "_EmptyLayout";
+    ViewData["Title"] = "Profile";
     bool admin = User.IsInRole("Administrator") || User.IsInRole("Admin");
+
+    if (TempData["AlertMessage"] != null && TempData["ResponseStatus"] != null)
+    {
+        var alertMessage = TempData["AlertMessage"].ToString();
+        var responseStatus = TempData["ResponseStatus"].ToString();
+
+        if (responseStatus == StatusCode.OK.ToString())
+        {
+            // <div class="success_alert" id="ActionAlert">
+            //     <span class="success_text">@alertMessage</span>
+            //     <button class="close_delete_alert" onclick="closeAlert()">&times;</button>
+            // </div>
+
+            <script>
+                showSuccessAlert("@alertMessage");
+            </script>
+        }
+        else
+        {
+            // <div class="fail_alert" id="ActionAlert">
+            //     <span class="fail_text">@alertMessage</span>
+            //     <button class="close_delete_alert" onclick="closeAlert()">&times;</button>
+            // </div>
+
+            <script>
+                showErrorAlert("@alertMessage");
+            </script>
+        }
+    }
 }
 
 <body>
@@ -61,7 +94,7 @@
                 @if (admin)
                 {
                     <a class="delete_items delete_account" data-account-id="@Model.Id">Delete</a>
-                    <section>
+                    @* <section>
                         <div id="modal_delete_@Model.Id" class="modal">
                             <div class="modal-content">
                                 <button class="close" data-account-id="@Model.Id">&times;</button>
@@ -73,7 +106,7 @@
                                 </div>
                             </div>
                         </div>
-                    </section>
+                    </section> *@
                 }
 
 

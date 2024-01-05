@@ -17,19 +17,7 @@
 }
 
 <body>
-    <main>
-        <div id="modal_delete_item" class="modal">
-            <div class="modal-content">
-                <span class="close">&times;</span>
-                <span class="confirmation_title">Are you sure?</span>
-                <div class="confirmation_buttons">
-                    <a class="confirmSave" id="confirmDelete_item" asp-controller="Car"
-                       asp-action="Delete" asp-route-id="@Model.Id">Confirm</a>
-                    <button class="confirmCancel" id="confirmCancel">Cancel</button>
-                </div>
-            </div>
-        </div>
-
+    <main>        
         <div class="consumables_container">
             <section>
                 <div class="pages_path">
@@ -49,7 +37,20 @@
                     {
                         <div class="admin_item_buttons">
                             <a class="edit_item" asp-controller="Car" asp-action="Save" asp-route-id = "@Model.Id">Edit</a>
-                            <a class="delete_item" id="openModal" asp-controller="Car" asp-action="Delete" asp-route-id="@Model.Id">Delete</a>
+                            <a class="delete_item" data-account-id="@Model.Id">
+                                <span>Delete</span>
+                            </a>
+
+                            <div id="modal_delete_@Model.Id" class="modal">
+                                <div class="modal-content">
+                                    <span class="close">&times;</span>
+                                    <span class="confirmation_title">Are you sure?</span>
+                                    <div class="confirmation_buttons">
+                                        <a class="confirmSave" asp-controller="Car" asp-action="Delete" asp-route-id="@Model.Id">Confirm</a>
+                                        <button class="confirmCancel">Cancel</button>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     }
                 </div>

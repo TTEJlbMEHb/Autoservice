@@ -1,9 +1,29 @@
 ﻿@using Automarket.Domain.Entity
 @using Automarket.Domain.Enum;
+@using System.Text.RegularExpressions;
 @model List<User>
 
 @{
-    ViewData["Title"] = "Admin Panel";
+    ViewData["Title"] = "Admin Panel";    
+
+    if (TempData["AlertMessage"] != null && TempData["ResponseStatus"] != null)
+    {
+        var alertMessage = TempData["AlertMessage"].ToString();
+        var responseStatus = TempData["ResponseStatus"].ToString();
+
+        if (responseStatus == StatusCode.OK.ToString())
+        {
+            <script>
+                showSuccessAlert("@alertMessage");
+            </script>
+        }
+        else
+        {
+            <script>
+                showErrorAlert("@alertMessage");
+            </script>
+        }
+    }
 }
 
 @functions {
@@ -90,24 +110,15 @@
                             <td class="user_info">@userRole.Email</td>
                             <td class="user_info">@userRole.Role</td>
                             <td>
-                                <a class="edit_items admin_panel_buttons" asp-controller="Account" asp-action="Profile" asp-route-id="@userRole.Id">
-                                    <span>Profile</span>
+                                <a class="edit_items admin_panel_buttons" asp-controller="Account" 
+                                    asp-action="Profile" asp-route-id="@userRole.Id">
+                                <span>Profile</span>
                                 </a>
                             </td>
                             <td>
                                 <a class="delete_items admin_panel_buttons" data-account-id="@userRole.Id">
                                     <span>Delete</span>
                                 </a>
-                                <div id="modal_delete_@userRole.Id" class="modal">
-                                    <div class="modal-content">
-                                        <button class="close" data-account-id="@userRole.Id">&times;</button>
-                                        <span class="confirmation_title">Are you sure?</span>
-                                        <div class="confirmation_buttons">
-                                            <a class="confirmSave" id="confirmSave_@userRole.Id" asp-controller="Admin" asp-action="DeleteAccount" asp-route-id="@userRole.Id">Confirm</a>
-                                            <button class="confirmCancel" data-account-id="@userRole.Id">Cancel</button>
-                                        </div>
-                                    </div>
-                                </div>
                             </td>
                         </tr>
                     }

@@ -21,7 +21,7 @@ namespace Automarket.DAL.Repositories
         public async Task Create(Car entity)
         {
             await _db.Car.AddAsync(entity);
-            await _db.SaveChangesAsync();
+            //await _db.SaveChangesAsync();
         }
 
         public IQueryable<Car> GetAll()
@@ -38,7 +38,7 @@ namespace Automarket.DAL.Repositories
         public async Task<Car> Update(Car entity)
         {
             _db.Car.Update(entity);
-            await _db.SaveChangesAsync();
+            //await _db.SaveChangesAsync();
 
             return entity;
         }

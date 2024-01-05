@@ -3,29 +3,73 @@
     deleteLinks.forEach(function (link) {
         link.addEventListener('click', function () {
             var modalId = this.getAttribute('data-account-id');
-            var modal = document.getElementById('modal_delete_' + modalId);
-            modal.style.display = 'block';
-        });
-    });
 
-    var closeButtons = document.querySelectorAll('.close, .confirmCancel');
-    closeButtons.forEach(function (button) {
-        button.addEventListener('click', function () {
-            var modalId = this.getAttribute('data-account-id');
-            var modal = document.getElementById('modal_delete_' + modalId);
-            modal.style.display = 'none';
-        });
-    });
+            Swal.fire({
+                title: "Are you sure?",
+                text: "You won't be able to revert this!",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#28a745",
+                cancelButtonColor: "#d33",
+                confirmButtonText: "Confirm",
+                customClass: {
+                    confirmButton: 'confirmSave',
+                    cancelButton: 'confirmCancel'
+                }
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    window.location.href = '/Admin/DeleteAccount/' + modalId;
+                }
+            });
 
-    window.addEventListener('click', function (event) {
-        var modals = document.querySelectorAll('.modal');
-        modals.forEach(function (modal) {
-            if (event.target === modal) {
-                modal.style.display = 'none';
+            var confirmButton = document.querySelector('.confirmSave');
+            var cancelButton = document.querySelector('.confirmCancel');
+
+            if (confirmButton && cancelButton) {
+                confirmButton.style.fontSize = '17px';
+                cancelButton.style.fontSize = '17px';
             }
         });
     });
 });
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    var saveButton = document.getElementById('createAccountSubmit');
+
+    if (saveButton) {
+        saveButton.addEventListener('click', function (event) {
+            event.preventDefault();
+
+            Swal.fire({
+                title: "Are you sure?",
+                text: "You won't be able to revert this!",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#28a745",
+                cancelButtonColor: "#d33",
+                confirmButtonText: "Confirm",
+                customClass: {
+                    confirmButton: 'confirmSave',
+                    cancelButton: 'confirmCancel'
+                }
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    document.getElementById('createAccountForm').submit();
+                }
+            });
+
+            var confirmButton = document.querySelector('.confirmSave');
+            var cancelButton = document.querySelector('.confirmCancel');
+
+            if (confirmButton && cancelButton) {
+                confirmButton.style.fontSize = '17px';
+                cancelButton.style.fontSize = '17px';
+            }
+        });
+    }
+});
+
 
 
 function searchUsers() {

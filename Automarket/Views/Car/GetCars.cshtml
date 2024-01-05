@@ -1,13 +1,41 @@
 ﻿@using Automarket.Domain.Entity;
+@using System.Text.RegularExpressions;
 @model List<Car>
 
 @{
     ViewData["Title"] = "Consumables";
-    bool admin = User.IsInRole("Administrator") || User.IsInRole("Admin");
-
-    bool available = true;
+    bool admin = User.IsInRole("Administrator") || User.IsInRole("Admin");    
 
     var itemCount = 0;
+    bool available = false;
+
+    if (itemCount > 0)
+    {
+        available = true;
+    }
+    else
+    {
+        available = false;
+    }
+
+
+    if (TempData["AlertMessage"] != null)
+    {
+        if (Regex.IsMatch(TempData["AlertMessage"].ToString(), @"Item \(Id - \d+\) deleted"))
+        {
+            <div class="success_alert" id="ActionAlert">
+                <span class="success_text">@TempData["AlertMessage"]</span>
+                <button class="close_delete_alert" onclick="closeAlert()">&times;</button>
+            </div>
+        }
+        else
+        {
+            <div class="fail_alert" id="ActionAlert">
+                <span class="fail_text">@TempData["AlertMessage"]</span>
+                <button class="close_delete_alert" onclick="closeAlert()">&times;</button>
+            </div>
+        }
+    }
 }
 
 <body>
@@ -64,7 +92,7 @@
                                 <a href="" class="favorite_icon"></a>
                                 <span class="item_card_price">$@car.Price<br /></span>
                                 <section>
-                                    @if (!available)
+                                    @if (available)
                                     {
                                         @if (admin)
                                         {

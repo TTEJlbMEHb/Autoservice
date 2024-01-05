@@ -176,7 +176,7 @@ namespace Automarket.Service.Implementations
             {
                 return new BaseResponse<Car>()
                 {
-                    Description = $"[CreateCar] : {ex.Message}",
+                    Description = $"[CreateItem] : {ex.Message}",
                     StatusCode = StatusCode.InternalServerError
                 };
             }
@@ -203,6 +203,7 @@ namespace Automarket.Service.Implementations
                 return new BaseResponse<bool>()
                 {
                     Data = true,
+                    Description = $"Item (Id - {id}) deleted",
                     StatusCode = StatusCode.OK
                 };
 
@@ -251,7 +252,7 @@ namespace Automarket.Service.Implementations
             {
                 return new BaseResponse<Car>()
                 {
-                    Description = $"[Edit] : {ex.Message}",
+                    Description = $"[EditItem] : {ex.Message}",
                     StatusCode = StatusCode.InternalServerError
                 };
             }

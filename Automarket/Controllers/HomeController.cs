@@ -25,39 +25,50 @@ namespace Automarket.Controllers
 
         public async Task<IActionResult> Index()
         {
-            var userEmailHelper = new GetUserEmailHelper(_httpContextAccessor);
-            string userEmail = userEmailHelper.GetUserUserEmail();
+            if (User.Identity.IsAuthenticated)
+            {
+                var userEmailHelper = new GetUserEmailHelper(_httpContextAccessor);
+                string userEmail = userEmailHelper.GetUserUserEmail();
 
-            var response = await _accountService.GetIdByEmail(userEmail);
-            ViewBag.UserId = response;
-            if (response.StatusCode == Domain.Enum.StatusCode.OK)
-            {
-                return View(response.Data);
+                var response = await _accountService.GetIdByEmail(userEmail);
+               
+                if (response.StatusCode == Domain.Enum.StatusCode.OK)
+                {
+                    ViewBag.UserId = response;
+                    return View(response.Data);
+                }
+                else if (response.StatusCode == Domain.Enum.StatusCode.InternalServerError)
+                {
+                    return RedirectToAction("InternalServerError", "Errors");
+                }
+                return RedirectToAction("Error", "Errors");
             }
-            else if (response.StatusCode == Domain.Enum.StatusCode.InternalServerError)
-            {
-                return RedirectToAction("InternalServerError", "Errors");
-            }
-            return RedirectToAction("Error", "Errors");
+
+            return View();
         }
 
         public async Task<IActionResult> About()
         {
-            var userEmailHelper = new GetUserEmailHelper(_httpContextAccessor);
-            string userEmail = userEmailHelper.GetUserUserEmail();
-
-            var response = await _accountService.GetIdByEmail(userEmail);
-
-            if (response.StatusCode == Domain.Enum.StatusCode.OK)
+            if (User.Identity.IsAuthenticated)
             {
-                ViewBag.UserId = response;
-                return View();
+                var userEmailHelper = new GetUserEmailHelper(_httpContextAccessor);
+                string userEmail = userEmailHelper.GetUserUserEmail();
+
+                var response = await _accountService.GetIdByEmail(userEmail);
+
+                if (response.StatusCode == Domain.Enum.StatusCode.OK)
+                {
+                    ViewBag.UserId = response;
+                    return View(response.Data);
+                }
+                else if (response.StatusCode == Domain.Enum.StatusCode.InternalServerError)
+                {
+                    return RedirectToAction("InternalServerError", "Errors");
+                }
+                return RedirectToAction("Error", "Errors");
             }
-            else if (response.StatusCode == Domain.Enum.StatusCode.InternalServerError)
-            {
-                return RedirectToAction("InternalServerError", "Errors");
-            }
-            return RedirectToAction("Error", "Errors");
+
+            return View();
         }      
 
         public IActionResult Privacy()

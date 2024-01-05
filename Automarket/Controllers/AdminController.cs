@@ -65,35 +65,46 @@ namespace Automarket.Controllers
 
                     if (response.StatusCode == Domain.Enum.StatusCode.OK)
                     {
+                        TempData["AlertMessage"] = response.Description;
+                        TempData["ResponseStatus"] = response.StatusCode.ToString();
+                        ModelState.AddModelError("", response.Description);
                         return RedirectToActionPermanent("Profile", "Account", new { id = response.Data.Id });
                     }
-                    else if (response.StatusCode == Domain.Enum.StatusCode.InternalServerError)
-                    {
-                        return RedirectToAction("InternalServerError", "Errors");
-                    }
-                    ModelState.AddModelError("", response.Description);
+
+                    TempData["AlertMessage"] = response.Description;
+                    TempData["ResponseStatus"] = "Error";
                 }
+                return View(user);
             }
-            return View(user);
+            else
+            {
+                return RedirectToAction("Forbidden", "Errors");
+            }
         }
 
         public async Task<IActionResult> DeleteAccount(long id)
         {
             if (User.IsInRole("Admin"))
             {
-                var response = await _accountService.DeleteAccount(id);
+                var response = await _accountService.DeleteAccount(id);                              
 
                 if (response.StatusCode == Domain.Enum.StatusCode.OK)
                 {
+                    TempData["AlertMessage"] = response.Description;
+                    TempData["ResponseStatus"] = response.StatusCode.ToString();
                     return RedirectToAction("Adminpanel", "Admin");
                 }
-                else if (response.StatusCode == Domain.Enum.StatusCode.InternalServerError)
+                else
                 {
-                    return RedirectToAction("InternalServerError", "Errors");
+                    var referer = Request.Headers["Referer"].ToString();
+                    TempData["AlertMessage"] = response.Description;
+                    TempData["ResponseStatus"] = "Error";
+                    return Redirect(referer);
                 }
-                ModelState.AddModelError("", response.Description);
             }
+
             return RedirectToAction("Forbidden", "Errors");
         }
+
     }
 }

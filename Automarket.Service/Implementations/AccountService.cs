@@ -278,7 +278,7 @@ namespace Automarket.Service.Implementations
                 return new BaseResponse<User>()
                 {
                     Data = newUser,
-                    Description = "Profile created",
+                    Description = $"Account created",
                     StatusCode = StatusCode.OK
                 };
             }
@@ -319,7 +319,7 @@ namespace Automarket.Service.Implementations
                 return new BaseResponse<User>()
                 {
                     Data = user,
-                    Description = "Profile updated",
+                    Description = $"Profile updated",
                     StatusCode = StatusCode.OK,
                 };
             }
@@ -353,7 +353,7 @@ namespace Automarket.Service.Implementations
                 return new BaseResponse<bool>()
                 {
                     Data = true,
-                    Description = "User deleted",
+                    Description = $"Account deleted",
                     StatusCode = StatusCode.OK
                 };
             }

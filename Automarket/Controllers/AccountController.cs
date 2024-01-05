@@ -128,14 +128,15 @@ namespace Automarket.Controllers
                         var response = await _accountService.EditAccount(user.Id, user);
 
                         if (response.StatusCode == Domain.Enum.StatusCode.OK)
-                        {
+                        {                           
+                            TempData["AlertMessage"] = response.Description;
+                            TempData["ResponseStatus"] = response.StatusCode.ToString();
+                            ModelState.AddModelError("", response.Description);
                             return RedirectToAction("Profile", "Account", new { id = user.Id });
                         }
-                        else if (response.StatusCode == Domain.Enum.StatusCode.InternalServerError)
-                        {
-                            return RedirectToAction("InternalServerError", "Errors");
-                        }
-                        ModelState.AddModelError("", response.Description);
+
+                        TempData["AlertMessage"] = response.Description;
+                        TempData["ResponseStatus"] = "Error";
                     }
                     return View(user);
                 }
@@ -156,7 +157,7 @@ namespace Automarket.Controllers
         public async Task<IActionResult> Logout()
         {
             await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
-            return RedirectToAction("Index", "Errors");
+            return RedirectToAction("Index", "Home");
         }
     }
 }

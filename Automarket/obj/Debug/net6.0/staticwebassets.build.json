@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "OjhRY0jOONHh44UPS0h+s4X1EgcQZeNV4bKWGCJXZ/M=",
+  "Hash": "WktTi5Nus6S94N4DxR00GX2cdxydacZsXr2Pwz2veqw=",
   "Source": "Automarket",
   "BasePath": "_content/Automarket",
   "Mode": "Default",
@@ -1630,23 +1630,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\profile.js"
-    },
-    {
-      "Identity": "D:\\Visual Studio\\ASP.Net\\Automarket\\Automarket\\wwwroot\\js\\save.js",
-      "SourceId": "Automarket",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\Visual Studio\\ASP.Net\\Automarket\\Automarket\\wwwroot\\",
-      "BasePath": "_content/Automarket",
-      "RelativePath": "js/save.js",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\js\\save.js"
     },
     {
       "Identity": "D:\\Visual Studio\\ASP.Net\\Automarket\\Automarket\\wwwroot\\js\\site.js",

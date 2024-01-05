@@ -1,22 +1,45 @@
 ﻿@using Automarket.Domain.Entity;
 @using Automarket.Domain.Enum;
 @using Automarket.Domain.ViewModels.Account;
+@using System.Text.RegularExpressions;
 @model AccountViewModel
 
 <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
 <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
 <link rel="stylesheet" href="~/css/profile.css" asp-append-version="true" />
 <link rel="stylesheet" href="~/css/admin.css" asp-append-version="true" />
+<link rel="stylesheet" href="~/css/layout.css" asp-append-version="true" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&family=Poppins&display=swap" rel="stylesheet">
 <link rel="icon" type="image/x-icon" href="~/img/automarket_1.jpg">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="~/js/layout.js" asp-append-version="true"></script>
 <script src="/js/profile.js" asp-append-version="true"></script>
 
 @{
-    Layout = null;
-    <title>Create Account - Automarket</title>
+    Layout = "_EmptyLayout";
+    ViewData["Title"] = "Create Account";
     bool validationErrors = ViewData.ModelState.Values.Any(e => e.Errors.Any());
+
+    if (TempData["AlertMessage"] != null && TempData["ResponseStatus"] != null)
+    {
+        var alertMessage = TempData["AlertMessage"].ToString();
+        var responseStatus = TempData["ResponseStatus"].ToString();
+
+        if (responseStatus == StatusCode.OK.ToString())
+        {
+            <script>
+                showSuccessAlert("@alertMessage");
+            </script>
+        }
+        else
+        {
+            <script>
+                showErrorAlert("@alertMessage");
+            </script>
+        }
+    }
 }
 
 <body>
@@ -48,7 +71,7 @@
                 </div>
                 <h3 class="user_title">User information</h3>
                 <div class="create_user_information">
-                    <form asp-controller="Admin" asp-action="CreateAccount" method="post">
+                    <form asp-controller="Admin" asp-action="CreateAccount" method="post" id="createAccountForm">
                         <div class="input_column">
                             <div>
                                 <label class="profile_label" for="Email">Login</label>
@@ -86,14 +109,18 @@
                             </div>
                             <div>
                                 <label class="profile_label" for="Role">Role</label>
-                                <select class="profile_input" asp-for="Role" asp-items="Html.GetEnumSelectList<Role>()">
-                                    <option class="" value="">Select Role</option>
+                                <select class="profile_input" asp-for="@Model.Role">
+                                    @foreach (var role in Enum.GetValues(typeof(Role)))
+                                    {
+                                        <option value="@role" selected="@Role.User">@role</option>
+                                    }
                                 </select>
+
                             </div>
 
                         </div>
 
-                        <button class="save_profile_button" type="submit">
+                        <button class="save_profile_button" type="submit" id="createAccountSubmit">
                             <span class="settings_text">Save</span>
                         </button>
                     </form>
